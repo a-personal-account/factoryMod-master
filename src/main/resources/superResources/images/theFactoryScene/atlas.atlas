@@ -5,31 +5,10 @@ filter: Linear,Linear
 repeat: none
 mod/bg1
   rotate: false
-  xy: 2, 1200
-  size: 1920, 501
-  orig: 1920, 1136
-  offset: 0, 445
-  index: -1
-mod/ceiling
-  rotate: false
-  xy: 2, 994
-  size: 1920, 204
-  orig: 1920, 1136
-  offset: 0, 932
-  index: -1
-mod/fg
-  rotate: false
-  xy: 2, 344
-  size: 1920, 648
-  orig: 1920, 1080
-  offset: 0, 0
-  index: -1
-mod/fgGlow
-  rotate: false
   xy: 2, 2
-  size: 1920, 340
-  orig: 1920, 1080
-  offset: 0, 64
+  size: 1921, 590
+  orig: 1921, 590
+  offset: 0, 425
   index: -1
   
 scene2.png

@@ -66,7 +66,7 @@ public class FactoryScene extends AbstractScene {
         this.renderAtlasRegionIf(sb, bg, true);
         sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE_MINUS_SRC_ALPHA);
         this.renderAtlasRegionIf(sb, this.floor, true);
-        this.renderAtlasRegionIf(sb, this.ceil, true);
+        // this.renderAtlasRegionIf(sb, this.ceil, true);
         this.renderAtlasRegionIf(sb, this.mg1, true);
     }
 
@@ -74,10 +74,10 @@ public class FactoryScene extends AbstractScene {
     public void renderCombatRoomFg(SpriteBatch sb) {
         sb.setColor(Color.WHITE.cpy());
         sb.setColor(Color.WHITE.cpy());
-        this.renderAtlasRegionIf(sb, this.fg, true);
-        sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE);
-        this.renderAtlasRegionIf(sb, this.fgGlow, true);
-        sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE_MINUS_SRC_ALPHA);
+        // this.renderAtlasRegionIf(sb, this.fg, true);
+        // sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE);
+        // this.renderAtlasRegionIf(sb, this.fgGlow, true);
+        // sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE_MINUS_SRC_ALPHA);
     }
 
     @Override

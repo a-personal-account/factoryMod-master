@@ -45,7 +45,7 @@ public class WindingCorridors extends AbstractImageEvent {
                                     cardList.add(c);
                                 }
                             }
-                            AbstractCard downgradeCard = cardList.get(AbstractDungeon.cardRandomRng.random(cardList.size() - 1)).makeCopy();
+                            AbstractCard downgradeCard = cardList.get(AbstractDungeon.cardRandomRng.random(cardList.size() - 1));
                             AbstractCard downgradeCardCopy = downgradeCard.makeCopy();
                             for (int f = 0; f < downgradeCard.timesUpgraded - 1; f++) {
                                 downgradeCardCopy.upgrade();
