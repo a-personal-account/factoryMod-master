@@ -28,7 +28,15 @@ public class WindingCorridors extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
         this.noCardsInRewards = true;
 
-        imageEventText.setDialogOption(OPTIONS[0]);
+        int numOfUpgradedCards = 0;
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            if (c.upgraded) {
+                numOfUpgradedCards++;
+            }
+        }
+        if (numOfUpgradedCards >= 2) {
+            imageEventText.setDialogOption(OPTIONS[0]);
+        }
         imageEventText.setDialogOption(OPTIONS[1]);
     }
 
@@ -50,9 +58,8 @@ public class WindingCorridors extends AbstractImageEvent {
                             for (int f = 0; f < downgradeCard.timesUpgraded - 1; f++) {
                                 downgradeCardCopy.upgrade();
                             }
-                            int index = AbstractDungeon.player.masterDeck.group.indexOf(downgradeCard);
-                            AbstractDungeon.player.masterDeck.group.remove(index);
-                            AbstractDungeon.player.masterDeck.group.add(index, downgradeCardCopy);
+                            AbstractDungeon.player.masterDeck.group.remove(downgradeCard);
+                            AbstractDungeon.player.masterDeck.group.add(downgradeCardCopy);
                             AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(downgradeCardCopy));
                         }
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);

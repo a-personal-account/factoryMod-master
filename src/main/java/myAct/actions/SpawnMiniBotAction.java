@@ -3,11 +3,13 @@ package myAct.actions;
 import basemod.BaseMod;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.monsters.*;
 
 import java.util.ArrayList;
@@ -85,6 +87,7 @@ public class SpawnMiniBotAction extends AbstractGameAction {
         BaseMod.logger.error("Spawning bot: " + m.drawX + " / " + m.drawY);
 
         AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, false));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new PlatedArmorPower(m, 5),5));
         m.rollMove();
         m.createIntent();
 
