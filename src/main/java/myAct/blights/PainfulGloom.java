@@ -10,6 +10,7 @@ public class PainfulGloom extends Blight {
 
     public PainfulGloom() {
         super(ID, "PainfulGloom");
+        this.counter = 0;
     }
 
     @Override

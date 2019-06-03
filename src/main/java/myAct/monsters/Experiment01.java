@@ -39,7 +39,7 @@ public class Experiment01 extends AbstractPlaceholderMonster {
     private static final float HB_W = 300.0F;
     private static final float HB_H = 300.0F;
     private static final int ATTACK_LIFESTEAL_DAMAGE = 20;
-    private static final int ATTACK_DEBUFF_DAMAGE = 10;
+    private static final int ATTACK_DEBUFF_DAMAGE = 15;
     private boolean firstTurn = true;
     private int attackLifestealDamage;
     private int attackDebuffDamage;
@@ -132,20 +132,16 @@ public class Experiment01 extends AbstractPlaceholderMonster {
                 }
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), effectToUse2));
                 for (int i = 0; i < 2; i++) {
-                    int letsSee = AbstractDungeon.monsterRng.random(6);
+                    int letsSee = AbstractDungeon.monsterRng.random(4);
                     if (letsSee == 0) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
                     } else if (letsSee == 1) {
-                        // put something here?
-                    } else if (letsSee == 2) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true), 2));
-                    } else if (letsSee == 3) {
+                    } else if (letsSee == 2) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ConstrictedPower(AbstractDungeon.player, this, 2), 2));
-                    } else if (letsSee == 4) {
+                    } else if (letsSee == 3) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 2, true), 2));
-                    } else if (letsSee == 5) {
-                        // put something here?
-                    } else if (letsSee == 6) {
+                    } else if (letsSee == 4) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new PoisonPower(AbstractDungeon.player, this, 2), 2));
                     }
                 }
