@@ -1,0 +1,29 @@
+{
+  "theFactory:CoughCoughPower": {
+    "NAME": "Cough Cough",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, take #b",
+      " damage."
+    ]
+  },
+  "theFactory:EndOfTurnDamagePower": {
+    "NAME": "Incoming Attack",
+    "DESCRIPTIONS": [
+      "At the end of this turn, take ",
+      " damage."
+    ]
+  },
+  "theFactory:GuardingPower": {
+    "NAME": "Guarded",
+    "DESCRIPTIONS": [
+      "Shrapnel Heap loses HP in place of this."
+    ]
+  },
+  "theFactory:SickDrinkPower": {
+    "NAME": "Drunk",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yExhaust #b",
+      " cards from your hand at random."
+    ]
+  }
+}

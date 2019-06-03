@@ -1,0 +1,20 @@
+{
+  "theFactory:EndlessReinforcements": {
+    "NAME": "Endless Reinforcements",
+    "DESCRIPTION": [
+      "At the start of every #b4th turn, #b1 Mini-Bot joins battle. NL #pThis #pplace #pspews #pout #pan #pinfinite #parmy."
+    ]
+  },
+  "theFactory:OppressiveHeat": {
+    "NAME": "Oppressive Heat",
+    "DESCRIPTION": [
+      "At the start of every #b3rd combat, lose #b1 random Common, Uncommon or Rare relic. NL #pThe #pburning #patmosphere #pmelts #pyour #ppetty #ptrinkets."
+    ]
+  },
+  "theFactory:PainfulGloom": {
+    "NAME": "Deadly Gloom",
+    "DESCRIPTION": [
+      "At the end of every #b3rd turn, shuffle #b1 random Curse card into your draw pile. NL #pThis #pmurky #prealm #pinspires #ponly #pdread."
+    ]
+  }
+}
