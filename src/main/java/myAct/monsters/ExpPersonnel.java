@@ -21,10 +21,10 @@ public class ExpPersonnel extends AbstractPlaceholderMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 70;
-    private static final int HP_MAX = 85;
-    private static final int A_7_HP_MIN = 79;
-    private static final int A_7_HP_MAX = 91;
+    private static final int HP_MIN = 87;
+    private static final int HP_MAX = 99;
+    private static final int A_7_HP_MIN = 100;
+    private static final int A_7_HP_MAX = 115;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;

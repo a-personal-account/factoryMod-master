@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.city.BronzeOrb;
 import myAct.monsters.ToyOrb;
 
 
@@ -78,7 +77,7 @@ public class SummonBronzeOrbAction extends AbstractGameAction {
 
         BaseMod.logger.error("Spawning orb: " + m.drawX + " / " + m.drawY);
 
-        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, false));
 
         this.isDone = true;
     }

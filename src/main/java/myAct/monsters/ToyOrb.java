@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import myAct.MyAct;
 
-public class ToyOrb extends AbstractPlaceholderMonster {
+public class ToyOrb extends AbstractMonster {
     public static final String ID = MyAct.makeID("ToyOrb");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;

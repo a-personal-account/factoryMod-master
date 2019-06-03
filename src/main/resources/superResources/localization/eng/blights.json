@@ -8,7 +8,7 @@
   "theFactory:OppressiveHeat": {
     "NAME": "Oppressive Heat",
     "DESCRIPTION": [
-      "At the start of every #b3rd combat, lose #b1 random Common, Uncommon or Rare relic. NL #pThe #pburning #patmosphere #pmelts #pyour #ppetty #ptrinkets."
+      "At the start of every #b2nd combat, lose #b1 random Common, Uncommon or Rare relic. NL #pThe #pburning #patmosphere #pmelts #pyour #ppetty #ptrinkets."
     ]
   },
   "theFactory:PainfulGloom": {

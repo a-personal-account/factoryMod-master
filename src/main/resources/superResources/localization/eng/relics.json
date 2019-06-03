@@ -8,7 +8,7 @@
   },
   "theFactory:Remembrance": {
     "NAME": "Remembrance",
-    "FLAVOR": "The Merchant has met their end many times against Spire denizens and irate shoppers alike. Fortunately, even revival is accessible with enough Gold.",
+    "FLAVOR": "The Merchant has met their end many times against Spire denizens and irate shoppers alike. Fortunately, even revival is possible with enough Gold.",
     "DESCRIPTIONS": [
       "The Merchant is #rdead."
     ]

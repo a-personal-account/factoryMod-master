@@ -10,9 +10,8 @@ import com.megacrit.cardcrawl.cards.curses.Clumsy;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
@@ -65,6 +64,11 @@ public class DefectiveSentry extends AbstractPlaceholderMonster {
         this.damage.add(new DamageInfo(this, attackDebuffDamage));
         this.damage.add(new DamageInfo(this, attackDefendDamage));
         this.damage.add(new DamageInfo(this, tripleAtkDamage));
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 5), 5));
     }
 
     @Override

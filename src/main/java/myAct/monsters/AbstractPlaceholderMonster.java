@@ -1,15 +1,14 @@
 package myAct.monsters;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public abstract class AbstractPlaceholderMonster extends AbstractMonster {
 
+    public Color myColor;
     int red = 0;
     int blue = 0;
     int green = 0;
-    public Color myColor;
 
     public AbstractPlaceholderMonster(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);

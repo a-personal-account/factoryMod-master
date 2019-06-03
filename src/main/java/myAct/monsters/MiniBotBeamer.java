@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 import myAct.powers.EndOfTurnDamagePower;
 
@@ -32,6 +32,10 @@ public class MiniBotBeamer extends AbstractPlaceholderMonster {
             this.setHp(HP_MIN, HP_MAX);
         }
 
+    }
+
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5), 5));
     }
 
     public void takeTurn() {

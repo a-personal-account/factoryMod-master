@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import myAct.MyAct;
 
 public class ShrapnelHeap extends AbstractPlaceholderMonster {
@@ -42,7 +41,6 @@ public class ShrapnelHeap extends AbstractPlaceholderMonster {
 
     public void die() {
         super.die();
-
     }
 
 }

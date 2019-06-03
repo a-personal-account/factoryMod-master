@@ -95,7 +95,7 @@ public class BodyBloom extends AbstractImageEvent {
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
-                        AbstractDungeon.player.damage(new DamageInfo((AbstractCreature) null, 9));
+                        AbstractDungeon.player.damage(new DamageInfo(null, 9));
                         AbstractRelic r = AbstractDungeon.returnRandomScreenlessRelic(AbstractRelic.RelicTier.COMMON);
 
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), r);

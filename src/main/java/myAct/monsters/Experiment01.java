@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import com.megacrit.cardcrawl.vfx.combat.GoldenSlashEffect;
@@ -69,6 +68,7 @@ public class Experiment01 extends AbstractPlaceholderMonster {
     }
 
     public void usePreBattleAction() {
+        AbstractDungeon.getCurrRoom().rewardAllowed = false;
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");
@@ -90,7 +90,6 @@ public class Experiment01 extends AbstractPlaceholderMonster {
                 possEffects.add(AttackEffect.SLASH_VERTICAL);
                 possEffects.add(AttackEffect.SMASH);
                 AttackEffect effectToUse = possEffects.get(AbstractDungeon.miscRng.random(possEffects.size() - 1));
-                AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(AbstractDungeon.player, this.damage.get(0), effectToUse));
                 if (effectToUse == AttackEffect.NONE) {
                     int whichNow = AbstractDungeon.miscRng.random(3);
                     if (whichNow == 0) {
@@ -103,6 +102,7 @@ public class Experiment01 extends AbstractPlaceholderMonster {
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ViceCrushEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), AbstractDungeon.miscRng.random(0.15F, 0.2F)));
                     }
                 }
+                AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(AbstractDungeon.player, this.damage.get(0), effectToUse));
                 break;
             case 2:
                 ArrayList<AttackEffect> possEffects2 = new ArrayList<>();
@@ -118,7 +118,6 @@ public class Experiment01 extends AbstractPlaceholderMonster {
                 possEffects2.add(AttackEffect.SLASH_VERTICAL);
                 possEffects2.add(AttackEffect.SMASH);
                 AttackEffect effectToUse2 = possEffects2.get(AbstractDungeon.miscRng.random(possEffects2.size() - 1));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), effectToUse2));
                 if (effectToUse2 == AttackEffect.NONE) {
                     int whichNow = AbstractDungeon.miscRng.random(3);
                     if (whichNow == 0) {
@@ -131,12 +130,13 @@ public class Experiment01 extends AbstractPlaceholderMonster {
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ViceCrushEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), AbstractDungeon.miscRng.random(0.15F, 0.2F)));
                     }
                 }
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), effectToUse2));
                 for (int i = 0; i < 2; i++) {
                     int letsSee = AbstractDungeon.monsterRng.random(6);
                     if (letsSee == 0) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
                     } else if (letsSee == 1) {
-                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), 2, true, true));
+                        // put something here?
                     } else if (letsSee == 2) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true), 2));
                     } else if (letsSee == 3) {
@@ -144,7 +144,7 @@ public class Experiment01 extends AbstractPlaceholderMonster {
                     } else if (letsSee == 4) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 2, true), 2));
                     } else if (letsSee == 5) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DrawReductionPower(AbstractDungeon.player, 2), 2));
+                        // put something here?
                     } else if (letsSee == 6) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new PoisonPower(AbstractDungeon.player, this, 2), 2));
                     }

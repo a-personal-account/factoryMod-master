@@ -1,4 +1,3 @@
-
 package myAct.blights;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

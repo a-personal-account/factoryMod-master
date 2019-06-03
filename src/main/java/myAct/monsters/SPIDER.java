@@ -131,10 +131,11 @@ public class SPIDER extends AbstractPlaceholderMonster {
     }
 
     public void usePreBattleAction() {
+        AbstractDungeon.getCurrRoom().rewardAllowed = false;
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new FlightButForASPIDER(this, 5), 0));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new FlightButForASPIDER(this, 7), 7));
     }
 
     public void takeTurn() {
@@ -242,7 +243,7 @@ public class SPIDER extends AbstractPlaceholderMonster {
                 break;
             case 11:
                 AbstractDungeon.actionManager.addToBottom(new MoveCreatureAction(this, this.drawX, this.drawY + 100, 0.75F));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new FlightPower(this, 5), 5));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new FlightButForASPIDER(this, 7), 7));
                 this.curForm = "FLIGHT";
                 this.turnGoing = 0;
         }

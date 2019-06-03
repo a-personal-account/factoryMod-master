@@ -1,13 +1,14 @@
 package myAct.monsters;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 import myAct.actions.SpawnMiniBotAction;
 
@@ -39,6 +40,10 @@ public class MiniBotBuilderBuilder extends AbstractPlaceholderMonster {
 
         this.attackdamage = ATTACK_DAMAGE;
         this.damage.add(new DamageInfo(this, attackdamage));
+    }
+
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5), 5));
     }
 
     public void takeTurn() {

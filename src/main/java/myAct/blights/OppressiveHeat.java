@@ -1,4 +1,3 @@
-
 package myAct.blights;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,7 +18,7 @@ public class OppressiveHeat extends Blight {
     @Override
     public void atBattleStart() {
         this.counter++;
-        if (this.counter == 3) {
+        if (this.counter == 2) {
             ArrayList<AbstractRelic> bigOlRelicList = new ArrayList<>();
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 if (r.tier == AbstractRelic.RelicTier.COMMON || r.tier == AbstractRelic.RelicTier.UNCOMMON || r.tier == AbstractRelic.RelicTier.RARE) {

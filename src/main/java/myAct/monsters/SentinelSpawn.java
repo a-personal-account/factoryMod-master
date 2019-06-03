@@ -22,7 +22,7 @@ public class SentinelSpawn extends AbstractPlaceholderMonster {
     private int turnNum;
 
     public SentinelSpawn(float x, float y, int health) {
-        super(NAME, "SentinelSpawn", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "SentinelSpawn", health, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
 
         this.setHp(health);
         this.damage.add(new DamageInfo(this, 10));

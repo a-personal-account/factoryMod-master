@@ -2,6 +2,7 @@ package myAct.monsters;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateHopAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.cards.status.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 
 public class MiniBotVirus extends AbstractPlaceholderMonster {
@@ -38,6 +39,10 @@ public class MiniBotVirus extends AbstractPlaceholderMonster {
             this.setHp(HP_MIN, HP_MAX);
         }
         this.damage.add(new DamageInfo(this, 7));
+    }
+
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5), 5));
     }
 
     public void takeTurn() {

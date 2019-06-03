@@ -1,7 +1,6 @@
 package myAct.events;
 
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,12 +9,8 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import myAct.MyAct;
-import myAct.relics.ChargeChargeCharge;
 import myAct.relics.Remembrance;
-
-import java.util.ArrayList;
 
 public class TroubledShopkeep extends AbstractImageEvent {
 
@@ -42,7 +37,7 @@ public class TroubledShopkeep extends AbstractImageEvent {
                 switch (i) {
                     case 0:
                         AbstractDungeon.player.damage(new DamageInfo(null, 16));
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH/2, Settings.HEIGHT/2, AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.SHOP));
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.SHOP));
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[2]);
                         this.imageEventText.clearRemainingOptions();

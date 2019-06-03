@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 import myAct.actions.SpawnMiniBotAction;
@@ -24,7 +24,6 @@ public class BigBot extends AbstractPlaceholderMonster {
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;
     private static final float HB_H = 150.0F;
-    private int attackDamage;
     private int turnNum;
 
     public BigBot(float x, float y) {
@@ -39,11 +38,16 @@ public class BigBot extends AbstractPlaceholderMonster {
         }
     }
 
+    @Override
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 2), 2));
+    }
+
     public void takeTurn() {
         AbstractDungeon.actionManager.addToBottom(new SpawnMiniBotAction());
         switch (this.nextMove) {
             case 1:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new EndOfTurnDamagePower(AbstractDungeon.player, this, 8)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new EndOfTurnDamagePower(AbstractDungeon.player, this, AbstractDungeon.cardRandomRng.random(8, 12))));
                 break;
             case 2:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5)));
@@ -54,7 +58,7 @@ public class BigBot extends AbstractPlaceholderMonster {
 
     protected void getMove(int num) {
         if (turnNum == 0) {
-            this.setMove((byte) 1, Intent.UNKNOWN);
+            this.setMove((byte) 1, Intent.DEBUFF);
         } else if (turnNum == 1) {
             this.setMove((byte) 2, Intent.BUFF);
         }

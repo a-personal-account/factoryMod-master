@@ -20,10 +20,10 @@ import java.util.ArrayList;
 
 public class Factory extends AbstractDungeon {
     public static final String ID = MyAct.makeID("Factory");
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
-    public static final String[] TEXT = uiStrings.TEXT;
     public static final String NAME = TEXT[0];
     public static final String NUM = TEXT[1];
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
+    public static final String[] TEXT = uiStrings.TEXT;
 
     public Factory(AbstractPlayer p, ArrayList<String> emptyList) {
         super(NAME, ID, p, emptyList);

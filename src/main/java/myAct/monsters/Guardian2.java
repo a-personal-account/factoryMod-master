@@ -13,10 +13,8 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
@@ -56,8 +54,7 @@ public class Guardian2 extends AbstractPlaceholderMonster {
     public Guardian2(float x, float y) {
         super(NAME, "Guardian2", 240, 0.0F, 0.0F, 300.0F, 300.0F, "superResources/images/monsters/bigHex.png", x, y);
         this.type = EnemyType.BOSS;
-        this.dialogX = -100.0F * Settings.scale;
-        this.dialogY = 50.0F * Settings.scale;
+
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.setHp(A_2_HP);
             this.dmgThreshold = A_19_DMG_THRESHOLD;
@@ -88,11 +85,13 @@ public class Guardian2 extends AbstractPlaceholderMonster {
     }
 
     public void usePreBattleAction() {
+        AbstractDungeon.getCurrRoom().rewardAllowed = false;
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BarricadePower(this), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ModeShiftPower(this, this.dmgThreshold)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 4), 4));
         AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "Reset Threshold"));
     }
 
@@ -232,7 +231,7 @@ public class Guardian2 extends AbstractPlaceholderMonster {
 
                 this.isOpen = true;
                 this.closeUpTriggered = false;
-                this.updateHitbox(0.0F, 95.0F, 440.0F, 350.0F);
+                // this.updateHitbox(0.0F, 0.0F, 300.0F, 300.0F);
                 this.healthBarUpdatedEvent();
                 break;
             case 2:

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import myAct.MyAct;
 import myAct.powers.SickDrinkPower;
 
@@ -63,9 +62,9 @@ public class DrinkBrewer extends AbstractPlaceholderMonster {
 
     protected void getMove(int num) {
         if (turnNum == 0) {
-            this.setMove((byte) 1, Intent.UNKNOWN);
+            this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
         } else if (turnNum == 1) {
-            this.setMove((byte) 2, Intent.BUFF);
+            this.setMove((byte) 2, Intent.STRONG_DEBUFF);
         }
         turnNum++;
         if (turnNum == 2) {

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.RegenPower;
 import myAct.MyAct;
 import myAct.powers.GuardingPower;
 
@@ -60,7 +60,7 @@ public class ShrapnelTosser extends AbstractPlaceholderMonster {
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead) {
                         if (m instanceof ShrapnelHeap) {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new ThornsPower(m, 2), 2));
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new RegenPower(m, 5), 5));
                         }
                     }
                 }
