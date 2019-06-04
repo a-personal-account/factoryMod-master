@@ -60,7 +60,7 @@ public class WindingCorridors extends AbstractImageEvent {
                             }
                             AbstractDungeon.player.masterDeck.group.remove(downgradeCard);
                             AbstractDungeon.player.masterDeck.group.add(downgradeCardCopy);
-                            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(downgradeCardCopy));
+                            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(downgradeCardCopy.makeCopy()));
                         }
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[2]);

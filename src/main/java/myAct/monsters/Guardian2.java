@@ -222,7 +222,7 @@ public class Guardian2 extends AbstractPlaceholderMonster {
                 this.setMove((byte) 1, Intent.BUFF);
                 this.createIntent();
                 this.isOpen = false;
-                this.updateHitbox(0.0F, 95.0F, 440.0F, 250.0F);
+                // this.updateHitbox(0.0F, 95.0F, 440.0F, 250.0F);
                 this.healthBarUpdatedEvent();
                 break;
             case 1:

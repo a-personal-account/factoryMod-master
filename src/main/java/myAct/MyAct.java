@@ -101,15 +101,15 @@ public class MyAct implements
         BaseMod.addMonster(FactoryEncounterIDList.SHRAPNEL_THROWER_ENCOUNTER_ID, "Metal Thrower", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new ShrapnelHeap(-225.0F, 0.0F),
-                        new ShrapnelTosser(0.F, 0.0F)
+                        new ShrapnelTosser(50.F, 0.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.BOT_BUNDLE_ENCOUNTER_ID, "Big Bot Bundle", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new BigBot(-175.0F, 50.0F),
-                        new ToyOrb(100.0F, 150.0F, 0),
+                        new BigBot(-175.0F, 125.0F),
+                        new ToyOrb(100.0F, 260.0F, 0),
                         new Sentry(0.0F, 0.0F),
-                        new MiniBotRepair(-200.0F, 200.0F)
+                        new MiniBotRepair(-200.0F, 325.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DEFECTIVE_SENTRY_ENCOUNTER_ID, () -> new DefectiveSentry(0.0F, 100.0F));
@@ -120,16 +120,17 @@ public class MyAct implements
                         new ToyOrb(200.0F, 250.0F, 1)
                 }
         ));
-        BaseMod.addMonster(FactoryEncounterIDList.DOUBLE_BIG_BOT_ENCOUNTER_ID, "2 Big Bots", () -> new MonsterGroup(
+        BaseMod.addMonster(FactoryEncounterIDList.DOUBLE_BIG_BOT_ENCOUNTER_ID, "Sentries and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
+                        new Sentry(-225.0F, 20.0F),
                         new BigBot(-133.0F, 0.0F),
-                        new BigBot(175.0F, 175.0F)
+                        new Sentry(175.0F, 175.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DECAYING_SENTINEL_ENCOUNTER_ID, "Decaying Sentinel", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new DecayingSentinel(60.0F, 100.0F),
-                        new SentinelSpawn(-125.0F, 0.0F, 25)
+                        new DecayingSentinel(60.0F, 125.0F),
+                        new SentinelSpawn(-150.0F, 0.0F, 30)
                 }
         ));
 
