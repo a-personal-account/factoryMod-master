@@ -40,12 +40,12 @@ public class ForkInTheRoad extends AbstractImageEvent {
                 CardCrawlGame.nextDungeon = TheBeyond.ID;
                 break;
             case 1:
-                ArrayList<AbstractBlight> blightList = new ArrayList<>();
+                /* ArrayList<AbstractBlight> blightList = new ArrayList<>();
                 blightList.add(new EndlessReinforcements());
                 blightList.add(new OppressiveHeat());
                 blightList.add(new PainfulGloom());
                 AbstractBlight blightToGet = blightList.get(AbstractDungeon.cardRandomRng.random(blightList.size() - 1));
-                AbstractDungeon.getCurrRoom().spawnBlightAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, blightToGet);
+                AbstractDungeon.getCurrRoom().spawnBlightAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, blightToGet); */
                 CardCrawlGame.nextDungeon = Factory.ID;
                 MyAct.wentToTheFactory = true;
                 break;
@@ -53,12 +53,12 @@ public class ForkInTheRoad extends AbstractImageEvent {
                 if (AbstractDungeon.cardRandomRng.randomBoolean()) {
                     CardCrawlGame.nextDungeon = TheBeyond.ID;
                 } else {
-                    ArrayList<AbstractBlight> blightList2 = new ArrayList<>();
+                    /* ArrayList<AbstractBlight> blightList2 = new ArrayList<>();
                     blightList2.add(BlightHelper.getBlight(EndlessReinforcements.ID));
                     blightList2.add(BlightHelper.getBlight(OppressiveHeat.ID));
                     blightList2.add(BlightHelper.getBlight(PainfulGloom.ID));
                     AbstractBlight blightToGet2 = blightList2.get(AbstractDungeon.cardRandomRng.random(blightList2.size() - 1));
-                    AbstractDungeon.getCurrRoom().spawnBlightAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, blightToGet2);
+                    AbstractDungeon.getCurrRoom().spawnBlightAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, blightToGet2); */
                     CardCrawlGame.nextDungeon = Factory.ID;
                     MyAct.wentToTheFactory = true;
                 }

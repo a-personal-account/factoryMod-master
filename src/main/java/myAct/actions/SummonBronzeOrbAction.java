@@ -12,11 +12,11 @@ import myAct.monsters.ToyOrb;
 
 
 public class SummonBronzeOrbAction extends AbstractGameAction {
-    private static final float MAX_Y = 250.0F;
-    private static final float MIN_Y = 100.0F;
+    private static final float MAX_Y = 200.0F;
+    private static final float MIN_Y = 150.0F;
     private static final float MIN_X = -200.0F;
     private static final float MAX_X = 200.0F;
-    private static final float BORDER = 100.0F * Settings.scale;
+    private static final float BORDER = 10.0F * Settings.scale;
 
     public SummonBronzeOrbAction() {
         this.actionType = ActionType.SPECIAL;
@@ -50,9 +50,9 @@ public class SummonBronzeOrbAction extends AbstractGameAction {
         do {
             success = true;
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                if (!(monster.isDeadOrEscaped() && monster.id.equals(m.id))) //we don't care about sparks that died, but other enemies could be issues (like repto daggers which have same pos)
+                if (!(monster.isDeadOrEscaped())) //we don't care about sparks that died, but other enemies could be issues (like repto daggers which have same pos)
                 {
-                    if (hb.intersects(monster.hb)) {
+                    if (overlap(hb, monster.hb)) {
                         success = false;
 
                         adjustAngle = (adjustAngle + 0.1f) % (MathUtils.PI2);

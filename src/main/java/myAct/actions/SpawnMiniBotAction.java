@@ -20,7 +20,7 @@ public class SpawnMiniBotAction extends AbstractGameAction {
     private static final float MIN_Y = 150.0F;
     private static final float MIN_X = -200.0F;
     private static final float MAX_X = 200.0F;
-    private static final float BORDER = 0.0F * Settings.scale;
+    private static final float BORDER = 10.0F * Settings.scale;
 
     public SpawnMiniBotAction() {
         this.actionType = ActionType.SPECIAL;
@@ -60,9 +60,9 @@ public class SpawnMiniBotAction extends AbstractGameAction {
         do {
             success = true;
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                if (!(monster.isDeadOrEscaped() && monster.id.equals(m.id))) //we don't care about sparks that died, but other enemies could be issues (like repto daggers which have same pos)
+                if (!(monster.isDeadOrEscaped())) //we don't care about sparks that died, but other enemies could be issues (like repto daggers which have same pos)
                 {
-                    if (hb.intersects(monster.hb)) {
+                    if (overlap(hb, monster.hb)) {
                         success = false;
 
                         adjustAngle = (adjustAngle + 0.1f) % (MathUtils.PI2);
@@ -87,7 +87,7 @@ public class SpawnMiniBotAction extends AbstractGameAction {
         BaseMod.logger.error("Spawning bot: " + m.drawX + " / " + m.drawY);
 
         AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, false));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new PlatedArmorPower(m, 5),5));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new PlatedArmorPower(m, 5), 5));
         m.rollMove();
         m.createIntent();
 
