@@ -21,8 +21,8 @@ public class CoughCoughPower extends AbstractPower implements CloneablePowerInte
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture tex84 = TextureLoader.getTexture("superResources/images/powers/EndOfTurnDamage_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("superResources/images/powers/EndOfTurnDamage_32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("superResources/images/powers/CoughCough_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("superResources/images/powers/CoughCough_32.png");
     public AbstractCreature source;
 
     public CoughCoughPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {

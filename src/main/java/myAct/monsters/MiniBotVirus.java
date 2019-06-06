@@ -6,16 +6,16 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.*;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 
-public class MiniBotVirus extends AbstractPlaceholderMonster {
+public class MiniBotVirus extends AbstractMonster {
     public static final String ID = MyAct.makeID("MiniBotVirus");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -26,19 +26,19 @@ public class MiniBotVirus extends AbstractPlaceholderMonster {
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
-    private int turnNum;
+    private static final float HB_W = 137.0F;
+    private static final float HB_H = 155.0F;
+    private int turnNum = AbstractDungeon.cardRandomRng.random(1);
 
     public MiniBotVirus(float x, float y) {
-        super(NAME, "MiniBotVirus", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "MiniBotVirus", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotVirus.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A_7_HP_MIN, A_7_HP_MAX);
         } else {
             this.setHp(HP_MIN, HP_MAX);
         }
-        this.damage.add(new DamageInfo(this, 7));
+        this.damage.add(new DamageInfo(this, 10));
     }
 
     public void usePreBattleAction() {
@@ -49,15 +49,7 @@ public class MiniBotVirus extends AbstractPlaceholderMonster {
 
         switch (this.nextMove) {
             case 1:
-                CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                group.addToBottom(new Slimed());
-                group.addToBottom(new VoidCard());
-                group.addToBottom(new Burn());
-                group.addToBottom(new Dazed());
-                group.addToBottom(new Wound());
-                group.shuffle();
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(group.getBottomCard(), 2, true, true));
-                group.clear();
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
                 break;
             case 2:
                 AbstractDungeon.actionManager.addToBottom(new AnimateHopAction(this));

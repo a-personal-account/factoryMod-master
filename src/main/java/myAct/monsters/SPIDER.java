@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import com.megacrit.cardcrawl.vfx.combat.GoldenSlashEffect;
@@ -24,7 +25,7 @@ import myAct.powers.FlightButForASPIDER;
 
 import java.util.ArrayList;
 
-public class SPIDER extends AbstractPlaceholderMonster {
+public class SPIDER extends AbstractMonster {
     public static final String ID = MyAct.makeID("SPIDER");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -35,8 +36,8 @@ public class SPIDER extends AbstractPlaceholderMonster {
     private static final int A_9_HP_MAX = 444;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 300.0F;
-    private static final float HB_H = 300.0F;
+    private static final float HB_W = 472.0F;
+    private static final float HB_H = 316.0F;
     private static final int GROUND_BIG_ATK_DAMAGE = 25;
     private static final int GROUND_SMALL_ATK_DAMAGE = 15;
     private static final int GROUND_SMALL_ATK_BLOCK = 10;
@@ -66,7 +67,7 @@ public class SPIDER extends AbstractPlaceholderMonster {
     private int turnGoing;
 
     public SPIDER(float x, float y) {
-        super(NAME, "SPIDER", 400, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/bigHex.png", x, y);
+        super(NAME, "SPIDER", 400, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/SPIDER.png", x, y);
 
         this.type = EnemyType.BOSS;
 
@@ -219,9 +220,9 @@ public class SPIDER extends AbstractPlaceholderMonster {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new EndOfTurnDamagePower(AbstractDungeon.player, this, invisSmallAtkIncoming), invisSmallAtkIncoming));
                 break;
             case 7:
-                AbstractDungeon.actionManager.addToBottom(new MoveCreatureAction(this, this.drawX, this.drawY - 1000, 0.25F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(7), AttackEffect.BLUNT_HEAVY));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(7), AttackEffect.BLUNT_HEAVY));
+                AbstractDungeon.actionManager.addToBottom(new MoveCreatureAction(this, this.drawX, this.drawY - 1100, 0.25F));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 3), 3));
                 this.curForm = "GROUNDED";
                 this.turnGoing = 0;

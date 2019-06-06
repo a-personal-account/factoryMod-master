@@ -77,7 +77,7 @@ public class MyAct implements
         BaseMod.addMonster(FactoryEncounterIDList.LARGE_MINIBOT_HORDE_ENCOUNTER_ID, "6 Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new MiniBotVirus(-385.0F, -15.0F),
-                        new MiniBotRepair(-166.0F, 187.0F),
+                        new MiniBotRepair(-200.0F, 233.0F),
                         new MiniBotDebuff(-120.0F, 0.0F),
                         new MiniBotBeamer(200.0F, 0.0F),
                         new MiniBotBuilderBuilder(0.0F, 220.0F),
@@ -112,7 +112,7 @@ public class MyAct implements
                         new MiniBotRepair(-200.0F, 325.0F)
                 }
         ));
-        BaseMod.addMonster(FactoryEncounterIDList.DEFECTIVE_SENTRY_ENCOUNTER_ID, () -> new DefectiveSentry(0.0F, 100.0F));
+        BaseMod.addMonster(FactoryEncounterIDList.DEFECTIVE_SENTRY_ENCOUNTER_ID, () -> new DefectiveSentry(0.0F, 0.0F));
         BaseMod.addMonster(FactoryEncounterIDList.BORING_BASEGAME_ENCOUNTER_ID, "Orbs and Orb Walker", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new ToyOrb(-255.0F, 300.0F, 0),
@@ -122,14 +122,14 @@ public class MyAct implements
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DOUBLE_BIG_BOT_ENCOUNTER_ID, "Sentries and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new Sentry(-225.0F, 20.0F),
-                        new BigBot(-133.0F, 0.0F),
-                        new Sentry(175.0F, 175.0F)
+                        new Sentry(-300.0F, 20.0F),
+                        new BigBot(-150.0F, 20.0F),
+                        new Sentry(150.0F, 20.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DECAYING_SENTINEL_ENCOUNTER_ID, "Decaying Sentinel", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new DecayingSentinel(60.0F, 125.0F),
+                        new DecayingSentinel(75.0F, 50.0F),
                         new SentinelSpawn(-150.0F, 0.0F, 30)
                 }
         ));
@@ -151,7 +151,6 @@ public class MyAct implements
 
         // Add dungeon
         GetDungeonPatches.addDungeon(Factory.ID, Factory.builder());
-        // GetDungeonPatches.addNextDungeon(Factory.ID, TheEnding.ID);
 
         //savable boolean
         BaseMod.addSaveField("wentToTheFactory", this);

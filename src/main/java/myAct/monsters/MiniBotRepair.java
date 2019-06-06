@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 
-public class MiniBotRepair extends AbstractPlaceholderMonster {
+public class MiniBotRepair extends AbstractMonster {
     public static final String ID = MyAct.makeID("MiniBotRepair");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -21,12 +21,12 @@ public class MiniBotRepair extends AbstractPlaceholderMonster {
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 137.0F;
+    private static final float HB_H = 155.0F;
     private int turnNum;
 
     public MiniBotRepair(float x, float y) {
-        super(NAME, "MiniBotRepair", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "MiniBotRepair", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotRepair.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A_7_HP_MIN, A_7_HP_MAX);

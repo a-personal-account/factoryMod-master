@@ -18,11 +18,11 @@ public class DecayingSentinel extends AbstractPlaceholderMonster {
     private static final int A_8_HP_MAX = 246;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 300.0F;
+    private static final float HB_H = 300.0F;
 
     public DecayingSentinel(float x, float y) {
-        super(NAME, "DecayingSentinel", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "DecayingSentinel", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/bigHex.png", x, y);
 
         this.type = EnemyType.NORMAL;
 

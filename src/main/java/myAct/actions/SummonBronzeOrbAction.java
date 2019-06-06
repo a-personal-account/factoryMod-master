@@ -12,11 +12,11 @@ import myAct.monsters.ToyOrb;
 
 
 public class SummonBronzeOrbAction extends AbstractGameAction {
-    private static final float MAX_Y = 200.0F;
-    private static final float MIN_Y = 150.0F;
-    private static final float MIN_X = -200.0F;
-    private static final float MAX_X = 200.0F;
-    private static final float BORDER = 10.0F * Settings.scale;
+    private static final float MAX_Y = 450.0F;
+    private static final float MIN_Y = 25.0F;
+    private static final float MIN_X = -600.0F;
+    private static final float MAX_X = 350.0F;
+    private static final float BORDER = 25.0F * Settings.scale;
 
     public SummonBronzeOrbAction() {
         this.actionType = ActionType.SPECIAL;

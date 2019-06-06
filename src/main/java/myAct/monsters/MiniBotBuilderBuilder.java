@@ -8,11 +8,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 import myAct.actions.SpawnMiniBotAction;
 
-public class MiniBotBuilderBuilder extends AbstractPlaceholderMonster {
+public class MiniBotBuilderBuilder extends AbstractMonster {
     public static final String ID = MyAct.makeID("MiniBotBuilderBuilder");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -23,14 +24,14 @@ public class MiniBotBuilderBuilder extends AbstractPlaceholderMonster {
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
-    private static final int ATTACK_DAMAGE = 6;
+    private static final float HB_W = 137.0F;
+    private static final float HB_H = 155.0F;
+    private static final int ATTACK_DAMAGE = 10;
     private int attackdamage;
     private int turnNum = 0;
 
     public MiniBotBuilderBuilder(float x, float y) {
-        super(NAME, "MiniBotBuilderBuilder", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "MiniBotBuilderBuilder", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotBuilder.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A_7_HP_MIN, A_7_HP_MAX);

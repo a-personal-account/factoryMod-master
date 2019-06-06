@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import myAct.MyAct;
 import myAct.actions.SpawnMiniBotAction;
 
-public class ExpPersonnel extends AbstractPlaceholderMonster {
+public class ExpPersonnel extends AbstractMonster {
     public static final String ID = MyAct.makeID("ExpPersonnel");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -27,8 +27,8 @@ public class ExpPersonnel extends AbstractPlaceholderMonster {
     private static final int A_7_HP_MAX = 115;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 120.0F;
+    private static final float HB_H = 188.0F;
     private static final int REGULAR_OLD_ATTACK_DMG = 8;
     private int regularOldAttackDmg;
     private int turnNum;
@@ -36,7 +36,7 @@ public class ExpPersonnel extends AbstractPlaceholderMonster {
     private boolean right;
 
     public ExpPersonnel(float x, float y, boolean isRight) {
-        super(NAME, "ExpPersonnel", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "ExpPersonnel", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/ExpPersonnel.png", x, y);
 
         this.type = EnemyType.NORMAL;
 

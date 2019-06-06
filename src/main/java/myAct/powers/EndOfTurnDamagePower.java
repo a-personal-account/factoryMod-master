@@ -31,7 +31,7 @@ public class EndOfTurnDamagePower extends AbstractPower implements CloneablePowe
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = true;
 
 

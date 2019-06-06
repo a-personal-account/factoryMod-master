@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -18,7 +19,7 @@ import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import myAct.MyAct;
 import myAct.powers.EndOfTurnDamagePower;
 
-public class DefectiveSentry extends AbstractPlaceholderMonster {
+public class DefectiveSentry extends AbstractMonster {
     public static final String ID = MyAct.makeID("DefectiveSentry");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -29,8 +30,8 @@ public class DefectiveSentry extends AbstractPlaceholderMonster {
     private static final int A_8_HP_MAX = 156;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 240.0F;
+    private static final float HB_H = 594.0F;
     private static final int ATTACK_DEBUFF_DAMAGE = 12;
     private static final int ATTACK_DEFEND_DAMAGE = 20;
     private static final int TRIPLE_ATK_DAMAGE = 8;
@@ -41,7 +42,7 @@ public class DefectiveSentry extends AbstractPlaceholderMonster {
     private boolean usedMegaDebuff = false;
 
     public DefectiveSentry(float x, float y) {
-        super(NAME, "DefectiveSentry", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "DefectiveSentry", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/DefectSentry.png", x, y);
 
         this.type = EnemyType.NORMAL;
 

@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import myAct.MyAct;
 
-public class MiniBotDebuff extends AbstractPlaceholderMonster {
+public class MiniBotDebuff extends AbstractMonster {
     public static final String ID = MyAct.makeID("MiniBotDebuff");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -25,19 +26,19 @@ public class MiniBotDebuff extends AbstractPlaceholderMonster {
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 137.0F;
+    private static final float HB_H = 155.0F;
     private int turnNum;
 
     public MiniBotDebuff(float x, float y) {
-        super(NAME, "MiniBotDebuff", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, "MiniBotDebuff", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotDebuff.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A_7_HP_MIN, A_7_HP_MAX);
         } else {
             this.setHp(HP_MIN, HP_MAX);
         }
-        this.damage.add(new DamageInfo(this, 11));
+        this.damage.add(new DamageInfo(this, 10));
     }
 
     public void usePreBattleAction() {
@@ -63,10 +64,10 @@ public class MiniBotDebuff extends AbstractPlaceholderMonster {
     }
 
     protected void getMove(int num) {
-        if (turnNum == 0) {
+        if (turnNum == 1) {
             this.setMove((byte) (AbstractDungeon.cardRandomRng.random(2) + 1), Intent.DEBUFF);
-        } else if (turnNum == 1) {
-            this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
+        } else if (turnNum == 0) {
+            this.setMove((byte) 4, Intent.ATTACK, this.damage.get(0).base);
         }
         turnNum++;
         if (turnNum == 2) {
