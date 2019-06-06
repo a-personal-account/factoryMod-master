@@ -80,7 +80,7 @@ public class SpawnSentinelSpawnAction extends AbstractGameAction {
         BaseMod.logger.error("Spawning bot: " + m.drawX + " / " + m.drawY);
 
         AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, false));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new GenericStrengthUpPower(m, "Improvements", 3), 3));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new GenericStrengthUpPower(m, "Improvements", 2), 2));
 
         this.isDone = true;
     }

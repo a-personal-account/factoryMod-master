@@ -77,7 +77,7 @@ public class SummonBronzeOrbAction extends AbstractGameAction {
 
         BaseMod.logger.error("Spawning orb: " + m.drawX + " / " + m.drawY);
 
-        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, false));
+        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
 
         this.isDone = true;
     }

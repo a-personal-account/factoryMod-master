@@ -122,7 +122,7 @@ public class MyAct implements
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DOUBLE_BIG_BOT_ENCOUNTER_ID, "Sentries and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new Sentry(-300.0F, 20.0F),
+                        new Sentry(-450.0F, 20.0F),
                         new BigBot(-150.0F, 20.0F),
                         new Sentry(150.0F, 20.0F)
                 }

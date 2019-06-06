@@ -75,10 +75,12 @@ public class DefectiveSentry extends AbstractMonster {
     @Override
     public void update() {
         super.update();
-        timertime += 60 * Gdx.graphics.getDeltaTime();
-        if (timertime >= 30) {
-            AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
-            timertime = 0;
+        if (!AbstractDungeon.actionManager.turnHasEnded) {
+            timertime += 60 * Gdx.graphics.getDeltaTime();
+            if (timertime >= 30) {
+                AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+                timertime = 0;
+            }
         }
     }
 
