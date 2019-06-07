@@ -1,7 +1,9 @@
 package myAct.monsters;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateHopAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -14,14 +16,15 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
+import myAct.vfx.ColoredLaserEffect;
 
 public class MiniBotVirus extends AbstractMonster {
     public static final String ID = MyAct.makeID("MiniBotVirus");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 30;
-    private static final int HP_MAX = 40;
+    private static final int HP_MIN = 27;
+    private static final int HP_MAX = 32;
     private static final int A_7_HP_MIN = 34;
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
@@ -38,7 +41,8 @@ public class MiniBotVirus extends AbstractMonster {
         } else {
             this.setHp(HP_MIN, HP_MAX);
         }
-        this.damage.add(new DamageInfo(this, 10));
+        this.damage.add(new DamageInfo(this, 7));
+        this.turnNum = AbstractDungeon.cardRandomRng.random(1);
     }
 
     public void usePreBattleAction() {
@@ -52,8 +56,8 @@ public class MiniBotVirus extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
                 break;
             case 2:
-                AbstractDungeon.actionManager.addToBottom(new AnimateHopAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ColoredLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, Color.PURPLE.cpy()), 0.3F));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
                 break;
         }
 

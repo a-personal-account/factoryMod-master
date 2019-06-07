@@ -11,14 +11,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import myAct.monsters.ToyOrb;
 
 
-public class SummonBronzeOrbAction extends AbstractGameAction {
-    private static final float MAX_Y = 450.0F;
-    private static final float MIN_Y = 25.0F;
-    private static final float MIN_X = -600.0F;
-    private static final float MAX_X = 350.0F;
-    private static final float BORDER = 25.0F * Settings.scale;
+public class SpawnBronzeOrbAction extends AbstractGameAction {
+    private static final float MAX_Y = 400.0F;
+    private static final float MIN_Y = 0.0F;
+    private static final float MIN_X = -500.0F;
+    private static final float MAX_X = 300.0F;
+    private static final float BORDER = 20.0F * Settings.scale;
 
-    public SummonBronzeOrbAction() {
+    public SpawnBronzeOrbAction() {
         this.actionType = ActionType.SPECIAL;
     }
 
@@ -77,7 +77,7 @@ public class SummonBronzeOrbAction extends AbstractGameAction {
 
         BaseMod.logger.error("Spawning orb: " + m.drawX + " / " + m.drawY);
 
-        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
+        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAutoPositionAction(m, true, m.drawX));
 
         this.isDone = true;
     }

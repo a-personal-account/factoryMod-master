@@ -14,11 +14,11 @@ import myAct.monsters.SentinelSpawn;
 
 
 public class SpawnSentinelSpawnAction extends AbstractGameAction {
-    private static final float MAX_Y = 450.0F;
-    private static final float MIN_Y = 25.0F;
-    private static final float MIN_X = -600.0F;
-    private static final float MAX_X = 350.0F;
-    private static final float BORDER = 25.0F * Settings.scale;
+    private static final float MAX_Y = 400.0F;
+    private static final float MIN_Y = 0.0F;
+    private static final float MIN_X = -500.0F;
+    private static final float MAX_X = 300.0F;
+    private static final float BORDER = 20.0F * Settings.scale;
     private int hp;
 
     public SpawnSentinelSpawnAction(int spawnHP) {
@@ -79,7 +79,7 @@ public class SpawnSentinelSpawnAction extends AbstractGameAction {
 
         BaseMod.logger.error("Spawning bot: " + m.drawX + " / " + m.drawY);
 
-        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, false));
+        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAutoPositionAction(m, false, m.drawX));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new GenericStrengthUpPower(m, "Improvements", 2), 2));
 
         this.isDone = true;

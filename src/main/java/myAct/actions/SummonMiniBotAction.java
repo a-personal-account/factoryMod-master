@@ -15,14 +15,14 @@ import myAct.monsters.*;
 import java.util.ArrayList;
 
 
-public class SpawnMiniBotAction extends AbstractGameAction {
-    private static final float MAX_Y = 450.0F;
-    private static final float MIN_Y = 25.0F;
-    private static final float MIN_X = -600.0F;
-    private static final float MAX_X = 350.0F;
-    private static final float BORDER = 25.0F * Settings.scale;
+public class SummonMiniBotAction extends AbstractGameAction {
+    private static final float MAX_Y = 400.0F;
+    private static final float MIN_Y = 0.0F;
+    private static final float MIN_X = -500.0F;
+    private static final float MAX_X = 300.0F;
+    private static final float BORDER = 20.0F * Settings.scale;
 
-    public SpawnMiniBotAction() {
+    public SummonMiniBotAction() {
         this.actionType = ActionType.SPECIAL;
     }
 
@@ -87,18 +87,16 @@ public class SpawnMiniBotAction extends AbstractGameAction {
         BaseMod.logger.error("Spawning bot: " + m.drawX + " / " + m.drawY);
 
         ArrayList<AbstractMonster> bundlea = new ArrayList<>();
-        bundlea.add(new MiniBotBeamer(AbstractDungeon.cardRandomRng.random(-1000, 1000), AbstractDungeon.cardRandomRng.random(-1000,1000)));
-        bundlea.add(new MiniBotDebuff(AbstractDungeon.cardRandomRng.random(-1000, 1000), AbstractDungeon.cardRandomRng.random(-1000,1000)));
-        bundlea.add(new MiniBotRepair(AbstractDungeon.cardRandomRng.random(-1000, 1000), AbstractDungeon.cardRandomRng.random(-1000,1000)));
-        bundlea.add(new MiniBotVirus(AbstractDungeon.cardRandomRng.random(-1000, 1000), AbstractDungeon.cardRandomRng.random(-1000,1000)));
-        bundlea.add(new MiniBotBuilderBuilder(AbstractDungeon.cardRandomRng.random(-1000, 1000), AbstractDungeon.cardRandomRng.random(-1000,1000)));
+        bundlea.add(new MiniBotBeamer(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+        bundlea.add(new MiniBotDebuff(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+        bundlea.add(new MiniBotRepair(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+        bundlea.add(new MiniBotVirus(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+        bundlea.add(new MiniBotBuilderBuilder(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
 
         AbstractMonster q = bundlea.get(AbstractDungeon.cardRandomRng.random(bundlea.size() - 1));
-        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(q, false));
+        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAutoPositionAction(q, false, m.drawX));
         AbstractDungeon.actionManager.addToBottom(new MoveCreatureAction(q, hb.x, hb.y));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(q, q, new PlatedArmorPower(q, 5), 5));
-        q.rollMove();
-        q.createIntent();
 
         this.isDone = true;
     }

@@ -138,7 +138,46 @@ public class Experiment01 extends AbstractMonster {
                     } else if (letsSee == 1) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true), 2));
                     } else if (letsSee == 2) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ConstrictedPower(AbstractDungeon.player, this, 2), 2));
+                        ArrayList<String> superList = new ArrayList<>();
+                        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
+                            if (AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount > 0) {
+                                superList.add("StrDown");
+                            }
+                        }
+                        if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
+                            if (AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount > 0) {
+                                superList.add("DexDown");
+                            }
+                        }
+                        if (AbstractDungeon.player.hasPower(FocusPower.POWER_ID)) {
+                            if (AbstractDungeon.player.getPower(FocusPower.POWER_ID).amount > 0) {
+                                superList.add("FocDown");
+                            }
+                        }
+                        if (superList.size() > 0) {
+                            String wahoo = superList.get(AbstractDungeon.cardRandomRng.random(superList.size() - 1));
+                            if (wahoo.equals("StrDown")) {
+                                if (AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount == 1) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new StrengthPower(AbstractDungeon.player, -1), -1));
+                                } else {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new StrengthPower(AbstractDungeon.player, -2), -2));
+                                }
+                            } else if (wahoo.equals("DexDown")) {
+                                if (AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount == 1) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DexterityPower(AbstractDungeon.player, -1), -1));
+                                } else {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DexterityPower(AbstractDungeon.player, -2), -2));
+                                }
+                            } else if (wahoo.equals("FocDown")) {
+                                if (AbstractDungeon.player.getPower(FocusPower.POWER_ID).amount == 1) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FocusPower(AbstractDungeon.player, -1), -1));
+                                } else {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FocusPower(AbstractDungeon.player, -2), -2));
+                                }
+                            }
+                        } else {
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ConstrictedPower(AbstractDungeon.player, this, 2), 2));
+                        }
                     } else if (letsSee == 3) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 2, true), 2));
                     } else if (letsSee == 4) {

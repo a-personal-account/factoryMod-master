@@ -2,10 +2,7 @@ package myAct.monsters;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import myAct.MyAct;
-import myAct.actions.SpawnMiniBotAction;
+import myAct.actions.SummonMiniBotAction;
 import myAct.intents.IntentEnums;
 
 public class ExpPersonnel extends AbstractMonster {
@@ -45,11 +42,13 @@ public class ExpPersonnel extends AbstractMonster {
             this.setHp(HP_MIN, HP_MAX);
         }
         if (isRight) {
-            this.turnNum++;
+            this.turnNum = 1;
         }
         this.regularOldAttackDmg = REGULAR_OLD_ATTACK_DMG;
 
         this.damage.add(new DamageInfo(this, regularOldAttackDmg));
+        this.damage.add(new DamageInfo(this, 20));
+        this.damage.add(new DamageInfo(this, 10));
     }
 
     public void takeTurn() {
@@ -59,28 +58,20 @@ public class ExpPersonnel extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 break;
             case 2:
-                boolean diddit = false;
-                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 2), 2));
-                        diddit = true;
-                    }
-                }
-                if (!diddit) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 2), 2));
-                }
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 2), 2));
                 break;
             case 3:
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(this, 20, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.1F));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 3, true), 3));
                 break;
             case 5:
-                AbstractDungeon.actionManager.addToBottom(new SpawnMiniBotAction());
+                AbstractDungeon.actionManager.addToBottom(new SummonMiniBotAction());
                 break;
             case 6:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 3, true), 3));
+                AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.maxHealth / 4));
                 break;
             case 7:
                 boolean diddit2 = false;
@@ -107,8 +98,7 @@ public class ExpPersonnel extends AbstractMonster {
                 }
                 break;
             case 9:
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(this, 10, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.1F));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE));
                 break;
             case 10:
                 boolean diddit4 = false;
@@ -171,21 +161,21 @@ public class ExpPersonnel extends AbstractMonster {
                 this.setMove((byte) 5, IntentEnums.SUMMON_MINI_BOT_INTENT);
             }
         } else if (this.turnNum == 1) {
-            int whatchaGonnaDo = AbstractDungeon.cardRandomRng.random(11);
+            int whatchaGonnaDo = AbstractDungeon.cardRandomRng.random(10);
             if (whatchaGonnaDo == 0) {
                 this.setMove((byte) 2, Intent.BUFF);
             } else if (whatchaGonnaDo == 1) {
-                this.setMove((byte) 3, Intent.ATTACK, 20);
+                this.setMove((byte) 3, Intent.STRONG_DEBUFF);
             } else if (whatchaGonnaDo == 2) {
                 this.setMove((byte) 4, Intent.STRONG_DEBUFF);
             } else if (whatchaGonnaDo == 3) {
-                this.setMove((byte) 6, Intent.STRONG_DEBUFF);
+                this.setMove((byte) 6, Intent.BUFF);
             } else if (whatchaGonnaDo == 4) {
                 this.setMove((byte) 7, Intent.BUFF);
             } else if (whatchaGonnaDo == 5) {
                 this.setMove((byte) 8, Intent.DEFEND);
             } else if (whatchaGonnaDo == 6) {
-                this.setMove((byte) 9, Intent.ATTACK, 10);
+                this.setMove((byte) 9, Intent.ATTACK, this.damage.get(1).base);
             } else if (whatchaGonnaDo == 7) {
                 this.setMove((byte) 10, Intent.BUFF);
             } else if (whatchaGonnaDo == 8) {

@@ -2,7 +2,7 @@ package myAct.blights;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import myAct.MyAct;
-import myAct.actions.SpawnMiniBotAction;
+import myAct.actions.SummonMiniBotAction;
 
 public class EndlessReinforcements extends Blight {
     public static final String ID = MyAct.makeID("EndlessReinforcements");
@@ -16,7 +16,7 @@ public class EndlessReinforcements extends Blight {
     public void atTurnStart() {
         this.counter++;
         if (this.counter == 4) {
-            AbstractDungeon.actionManager.addToBottom(new SpawnMiniBotAction());
+            AbstractDungeon.actionManager.addToBottom(new SummonMiniBotAction());
             this.flash();
             this.counter = 0;
         }

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
-import myAct.actions.SpawnMiniBotAction;
+import myAct.actions.SummonMiniBotAction;
 import myAct.intents.IntentEnums;
 
 public class BigBot extends AbstractMonster {
@@ -17,8 +17,8 @@ public class BigBot extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 80;
-    private static final int HP_MAX = 85;
+    private static final int HP_MIN = 88;
+    private static final int HP_MAX = 92;
     private static final int A_8_HP_MIN = 100;
     private static final int A_8_HP_MAX = 100;
     private static final float HB_X = 0.0F;
@@ -48,7 +48,7 @@ public class BigBot extends AbstractMonster {
     public void takeTurn() {
         switch (this.nextMove) {
             case 1:
-                AbstractDungeon.actionManager.addToBottom(new SpawnMiniBotAction());
+                AbstractDungeon.actionManager.addToBottom(new SummonMiniBotAction());
                 break;
         }
 

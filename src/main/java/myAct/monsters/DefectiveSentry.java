@@ -17,7 +17,6 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import myAct.MyAct;
-import myAct.powers.EndOfTurnDamagePower;
 
 public class DefectiveSentry extends AbstractMonster {
     public static final String ID = MyAct.makeID("DefectiveSentry");
@@ -65,6 +64,7 @@ public class DefectiveSentry extends AbstractMonster {
         this.damage.add(new DamageInfo(this, attackDebuffDamage));
         this.damage.add(new DamageInfo(this, attackDefendDamage));
         this.damage.add(new DamageInfo(this, tripleAtkDamage));
+        this.damage.add(new DamageInfo(this, 27));
     }
 
     @Override
@@ -87,7 +87,7 @@ public class DefectiveSentry extends AbstractMonster {
     public void takeTurn() {
         switch (this.nextMove) {
             case 1:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new EndOfTurnDamagePower(AbstractDungeon.player, this, 32), 32));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AttackEffect.SLASH_VERTICAL));
                 break;
             case 2:
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.FIRE));
@@ -123,7 +123,7 @@ public class DefectiveSentry extends AbstractMonster {
             whatwedoin = AbstractDungeon.cardRandomRng.random(4);
         }
         if (whatwedoin == 0) {
-            this.setMove((byte) 1, Intent.STRONG_DEBUFF);
+            this.setMove((byte) 1, Intent.ATTACK, this.damage.get(3).base);
         } else if (whatwedoin == 1) {
             this.setMove((byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
         } else if (whatwedoin == 2) {

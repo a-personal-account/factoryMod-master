@@ -8,22 +8,22 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import com.megacrit.cardcrawl.vfx.combat.GoldenSlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import myAct.MyAct;
 import myAct.actions.MoveCreatureAction;
-import myAct.powers.EndOfTurnDamagePower;
 import myAct.powers.FlightButForASPIDER;
-
-import java.util.ArrayList;
 
 public class SPIDER extends AbstractMonster {
     public static final String ID = MyAct.makeID("SPIDER");
@@ -43,12 +43,10 @@ public class SPIDER extends AbstractMonster {
     private static final int GROUND_SMALL_ATK_BLOCK = 10;
     private static final int GROUND_DEBUFF_ATK_DAMAGE = 7;
     private static final int FLIGHT_SMALL_ATK_DAMAGE = 10;
-    private static final int FLIGHT_SMALL_ATK_INCOMING = 10;
-    private static final int FLIGHT_HEAL_ATK_DAMAGE = 15;
+    private static final int FLIGHT_HEAL_ATK_DAMAGE = 20;
     private static final int FLIGHT_HEAL_ATK_HEAL = 5;
     private static final int INVIS_PSN_ATK_DAMAGE = 15;
-    private static final int INVIS_SMALL_ATK_DAMAGE = 10;
-    private static final int INVIS_SMALL_ATK_INCOMING = 10;
+    private static final int INVIS_SMALL_ATK_DAMAGE = 12;
     private static final int INVIS_FORMSWAP_DAMAGE = 10;
     public boolean removingWahoo = false;
     int groundBigAtkDamage;
@@ -56,12 +54,10 @@ public class SPIDER extends AbstractMonster {
     int groundSmallAtkBlock;
     int groundDebuffAtkDamage;
     int flightSmallAtkDamage;
-    int flightSmallAtkIncoming;
     int flightHealAtkDamage;
     int flightHealAtkHeal;
     int invisPsnAtkDamage;
     int invisSmallAtkDamage;
-    int invisSmallAtkIncoming;
     int invisFormSwapDamage;
     private String curForm;
     private int turnGoing;
@@ -86,12 +82,10 @@ public class SPIDER extends AbstractMonster {
             groundSmallAtkBlock = GROUND_SMALL_ATK_BLOCK;
             groundDebuffAtkDamage = GROUND_DEBUFF_ATK_DAMAGE;
             flightSmallAtkDamage = FLIGHT_SMALL_ATK_DAMAGE;
-            flightSmallAtkIncoming = FLIGHT_SMALL_ATK_INCOMING;
             flightHealAtkDamage = FLIGHT_HEAL_ATK_DAMAGE;
             flightHealAtkHeal = FLIGHT_HEAL_ATK_HEAL;
             invisPsnAtkDamage = INVIS_PSN_ATK_DAMAGE;
             invisSmallAtkDamage = INVIS_SMALL_ATK_DAMAGE;
-            invisSmallAtkIncoming = INVIS_SMALL_ATK_INCOMING;
             invisFormSwapDamage = INVIS_FORMSWAP_DAMAGE;
         } else if (AbstractDungeon.ascensionLevel >= 4) {
             groundBigAtkDamage = GROUND_BIG_ATK_DAMAGE;
@@ -99,12 +93,10 @@ public class SPIDER extends AbstractMonster {
             groundSmallAtkBlock = GROUND_SMALL_ATK_BLOCK;
             groundDebuffAtkDamage = GROUND_DEBUFF_ATK_DAMAGE;
             flightSmallAtkDamage = FLIGHT_SMALL_ATK_DAMAGE;
-            flightSmallAtkIncoming = FLIGHT_SMALL_ATK_INCOMING;
             flightHealAtkDamage = FLIGHT_HEAL_ATK_DAMAGE;
             flightHealAtkHeal = FLIGHT_HEAL_ATK_HEAL;
             invisPsnAtkDamage = INVIS_PSN_ATK_DAMAGE;
             invisSmallAtkDamage = INVIS_SMALL_ATK_DAMAGE;
-            invisSmallAtkIncoming = INVIS_SMALL_ATK_INCOMING;
             invisFormSwapDamage = INVIS_FORMSWAP_DAMAGE;
         } else {
             groundBigAtkDamage = GROUND_BIG_ATK_DAMAGE;
@@ -112,12 +104,10 @@ public class SPIDER extends AbstractMonster {
             groundSmallAtkBlock = GROUND_SMALL_ATK_BLOCK;
             groundDebuffAtkDamage = GROUND_DEBUFF_ATK_DAMAGE;
             flightSmallAtkDamage = FLIGHT_SMALL_ATK_DAMAGE;
-            flightSmallAtkIncoming = FLIGHT_SMALL_ATK_INCOMING;
             flightHealAtkDamage = FLIGHT_HEAL_ATK_DAMAGE;
             flightHealAtkHeal = FLIGHT_HEAL_ATK_HEAL;
             invisPsnAtkDamage = INVIS_PSN_ATK_DAMAGE;
             invisSmallAtkDamage = INVIS_SMALL_ATK_DAMAGE;
-            invisSmallAtkIncoming = INVIS_SMALL_ATK_INCOMING;
             invisFormSwapDamage = INVIS_FORMSWAP_DAMAGE;
         }
 
@@ -144,7 +134,6 @@ public class SPIDER extends AbstractMonster {
             case 1:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new GoldenSlashEffect(AbstractDungeon.player.hb.cX - 60.0F * Settings.scale, AbstractDungeon.player.hb.cY, false), 0.0F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new EndOfTurnDamagePower(AbstractDungeon.player, this, flightSmallAtkIncoming), flightSmallAtkIncoming));
                 break;
             case 2:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new BiteEffect(AbstractDungeon.player.hb.cX + MathUtils.random(-25.0F, 25.0F) * Settings.scale, AbstractDungeon.player.hb.cY + MathUtils.random(-25.0F, 25.0F) * Settings.scale, Color.LIGHT_GRAY.cpy()), 0.0F));
@@ -152,46 +141,11 @@ public class SPIDER extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, flightHealAtkHeal));
                 break;
             case 3:
-                ArrayList<String> superList = new ArrayList<>();
-                if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
-                    if (AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount > 0) {
-                        superList.add("StrDown");
-                    }
-                }
-                if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
-                    if (AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount > 0) {
-                        superList.add("DexDown");
-                    }
-                }
-                if (AbstractDungeon.player.hasPower(FocusPower.POWER_ID)) {
-                    if (AbstractDungeon.player.getPower(FocusPower.POWER_ID).amount > 0) {
-                        superList.add("FocDown");
-                    }
-                }
-                if (superList.size() > 0) {
-                    String wahoo = superList.get(AbstractDungeon.cardRandomRng.random(superList.size() - 1));
-                    if (wahoo.equals("StrDown")) {
-                        if (AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount == 1) {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new StrengthPower(AbstractDungeon.player, -1), -1));
-                        } else {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new StrengthPower(AbstractDungeon.player, -2), -2));
-                        }
-                    } else if (wahoo.equals("DexDown")) {
-                        if (AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount == 1) {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DexterityPower(AbstractDungeon.player, -1), -1));
-                        } else {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DexterityPower(AbstractDungeon.player, -2), -2));
-                        }
-                    } else if (wahoo.equals("FocDown")) {
-                        if (AbstractDungeon.player.getPower(FocusPower.POWER_ID).amount == 1) {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FocusPower(AbstractDungeon.player, -1), -1));
-                        } else {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FocusPower(AbstractDungeon.player, -2), -2));
-                        }
-                    }
-                } else {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Dazed(), 3));
-                }
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), 1, true, false, false, (float) Settings.WIDTH * 0.2F, (float) Settings.HEIGHT / 2.0F));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), 1, true, false, false, (float) Settings.WIDTH * 0.35F, (float) Settings.HEIGHT / 2.0F));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), 1, true, false, false, (float) Settings.WIDTH * 0.5F, (float) Settings.HEIGHT / 2.0F));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), 1, true, false, false, (float) Settings.WIDTH * 0.65F, (float) Settings.HEIGHT / 2.0F));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), 1, true, false, false, (float) Settings.WIDTH * 0.8F, (float) Settings.HEIGHT / 2.0F));
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new MoveCreatureAction(this, this.drawX, this.drawY + 1000, 1.5F));
@@ -217,12 +171,11 @@ public class SPIDER extends AbstractMonster {
                 break;
             case 6:
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(6), AttackEffect.SLASH_HORIZONTAL));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new EndOfTurnDamagePower(AbstractDungeon.player, this, invisSmallAtkIncoming), invisSmallAtkIncoming));
                 break;
             case 7:
+                AbstractDungeon.actionManager.addToBottom(new MoveCreatureAction(this, this.drawX, this.drawY - 1100, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(7), AttackEffect.BLUNT_HEAVY));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(7), AttackEffect.BLUNT_HEAVY));
-                AbstractDungeon.actionManager.addToBottom(new MoveCreatureAction(this, this.drawX, this.drawY - 1100, 0.25F));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 3), 3));
                 this.curForm = "GROUNDED";
                 this.turnGoing = 0;
@@ -270,7 +223,7 @@ public class SPIDER extends AbstractMonster {
                 if (turnGoing == 0) {
                     this.setMove((byte) 5, Intent.ATTACK_DEBUFF, this.damage.get(5).base);
                 } else if (turnGoing == 1) {
-                    this.setMove((byte) 6, Intent.ATTACK_DEBUFF, this.damage.get(6).base);
+                    this.setMove((byte) 6, Intent.ATTACK, this.damage.get(6).base);
                 } else if (turnGoing == 2) {
                     this.setMove((byte) 7, Intent.ATTACK_BUFF, this.damage.get(7).base, 2, true);
                 }

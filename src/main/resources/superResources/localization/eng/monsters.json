@@ -1,6 +1,6 @@
 {
 	"theFactory:BigBot": {
-		"NAME": "Big Bot",
+		"NAME": "Alarm Sentry",
 		"MOVES": [
 			"MOVE1???"
 		],
@@ -81,7 +81,7 @@
 		]
 	},
 	"theFactory:MiniBotBuilderBuilder": {
-		"NAME": "Mini-Bot Constructor",
+		"NAME": "Mini-Bot Summoner",
 		"MOVES": [
 			"MOVE1???"
 		],
@@ -108,7 +108,7 @@
 		]
 	},
 	"theFactory:MiniBotVirus": {
-		"NAME": "Mini-Bot Virus",
+		"NAME": "Mini-Bot Voider",
 		"MOVES": [
 			"MOVE1???"
 		],

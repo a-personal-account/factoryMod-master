@@ -81,9 +81,9 @@ public class MyAct implements
         // Weak Pool
         BaseMod.addMonster(FactoryEncounterIDList.SMALL_MINIBOT_GANG_ENCOUNTER_ID, "4 Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new MiniBotBeamer(-385.0F, -15.0F),
-                        new MiniBotBuilderBuilder(-133.0F, 0.0F),
-                        new MiniBotRepair(100.0F, 224.0F),
+                        new MiniBotBeamer(-400.0F, 0.0F),
+                        new MiniBotBuilderBuilder(-200.0F, 0.0F),
+                        new MiniBotRepair(0.0F, 0.0F),
                         new MiniBotDebuff(200.0F, 0.0F)
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_SMALL_ENCOUNTER_ID, "2 Experiment Personnel", () -> new MonsterGroup(
@@ -97,26 +97,25 @@ public class MyAct implements
         // Strong Pool
         BaseMod.addMonster(FactoryEncounterIDList.LARGE_MINIBOT_HORDE_ENCOUNTER_ID, "6 Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new MiniBotVirus(-385.0F, -15.0F),
-                        new MiniBotRepair(-200.0F, 233.0F),
-                        new MiniBotDebuff(-120.0F, 0.0F),
-                        new MiniBotBeamer(200.0F, 0.0F),
-                        new MiniBotBuilderBuilder(0.0F, 220.0F),
-                        new MiniBotBeamer(200.0F, 200.0F)
+                        new MiniBotVirus(-550.0F, 0.0F),
+                        new MiniBotRepair(-400.0F, 250.0F),
+                        new MiniBotBuilderBuilder(-250.0F, 0.0F),
+                        new MiniBotDebuff(-100.0F, 250.0F),
+                        new MiniBotBeamer(50.0F, 0.0F),
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_BOTS_ENCOUNTER_ID, "Personnel and Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new ExpPersonnel(-170.0F, 0.0F, false),
-                        new ExpPersonnel(100.0F, 0.0F, true),
-                        new MiniBotBeamer(-385.0F, -15.0F),
-                        new MiniBotDebuff(166.0F, 200.0F)
+                        new ExpPersonnel(200.0F, 0.0F, false),
+                        new ExpPersonnel(0.0F, 0.0F, true),
+                        new MiniBotBeamer(-200.0F, 0.0F),
+                        new MiniBotDebuff(-400.0F, 0.0F)
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_ORB_ENCOUNTER_ID, "Personnel and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new ExpPersonnel(0.0F, 0.0F, false),
-                        new ExpPersonnel(-340.0F, 0.0F, true),
-                        new MiniBotVirus(-155.0F, 400.0F),
-                        new MiniBotRepair(100.0F, 400.0F)
+                        new ExpPersonnel(-500.0F, 0.0F, true),
+                        new MiniBotVirus(-250.0F, 0.0F),
+                        new MiniBotRepair(250.0F, 0.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.SHRAPNEL_THROWER_ENCOUNTER_ID, "Metal Thrower", () -> new MonsterGroup(
@@ -128,8 +127,8 @@ public class MyAct implements
         BaseMod.addMonster(FactoryEncounterIDList.BOT_BUNDLE_ENCOUNTER_ID, "Big Bot Bundle", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new BigBot(-250.0F, 0.0F),
-                        new ToyOrb(-125.0F, 325.0F, 0),
-                        new Sentry(0.0F, 0.0F),
+                        new ToyOrb(-175.0F, 350.0F, 0),
+                        new Sentry(100.0F, 0.0F),
                         new MiniBotRepair(-500.0F, 0.0F)
                 }
         ));

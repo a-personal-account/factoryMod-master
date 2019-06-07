@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import myAct.MyAct;
-import myAct.actions.SummonBronzeOrbAction;
+import myAct.actions.SpawnBronzeOrbAction;
 import myAct.intents.IntentEnums;
 
 public class Manservantes extends AbstractMonster {
@@ -68,7 +68,7 @@ public class Manservantes extends AbstractMonster {
         switch (this.nextMove) {
             case 1:
                 for (int i = 0; i < 3; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new SummonBronzeOrbAction());
+                    AbstractDungeon.actionManager.addToBottom(new SpawnBronzeOrbAction());
                 }
                 break;
             case 2:
@@ -78,7 +78,7 @@ public class Manservantes extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DexterityPower(AbstractDungeon.player, -1), -1));
                 break;
             case 4:
-                AbstractDungeon.actionManager.addToBottom(new SummonBronzeOrbAction());
+                AbstractDungeon.actionManager.addToBottom(new SpawnBronzeOrbAction());
                 break;
         }
 
