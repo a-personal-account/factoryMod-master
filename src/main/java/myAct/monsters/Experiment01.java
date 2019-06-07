@@ -7,15 +7,14 @@ import com.megacrit.cardcrawl.actions.animations.AnimateHopAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import com.megacrit.cardcrawl.vfx.combat.GoldenSlashEffect;
@@ -25,19 +24,19 @@ import myAct.MyAct;
 
 import java.util.ArrayList;
 
-public class Experiment01 extends AbstractPlaceholderMonster {
+public class Experiment01 extends AbstractMonster {
     public static final String ID = MyAct.makeID("Experiment01");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 600;
-    private static final int HP_MAX = 600;
-    private static final int A_9_HP_MIN = 660;
-    private static final int A_9_HP_MAX = 660;
+    private static final int HP_MIN = 666;
+    private static final int HP_MAX = 666;
+    private static final int A_9_HP_MIN = 678;
+    private static final int A_9_HP_MAX = 678;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 300.0F;
-    private static final float HB_H = 300.0F;
+    private static final float HB_W = 630.0F;
+    private static final float HB_H = 618.0F;
     private static final int ATTACK_LIFESTEAL_DAMAGE = 20;
     private static final int ATTACK_DEBUFF_DAMAGE = 15;
     private boolean firstTurn = true;
@@ -45,7 +44,7 @@ public class Experiment01 extends AbstractPlaceholderMonster {
     private int attackDebuffDamage;
 
     public Experiment01(float x, float y) {
-        super(NAME, "Experiment01", 666, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/bigHex.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/Experiment01.png", x, y);
 
         this.type = EnemyType.BOSS;
 
@@ -72,6 +71,7 @@ public class Experiment01 extends AbstractPlaceholderMonster {
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 5), 5));
     }
 
     public void takeTurn() {

@@ -8,11 +8,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import myAct.MyAct;
 import myAct.powers.CoughCoughPower;
 
-public class SmogElemental extends AbstractPlaceholderMonster {
+public class SmogElemental extends AbstractMonster {
     public static final String ID = MyAct.makeID("SmogElemental");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -23,8 +24,8 @@ public class SmogElemental extends AbstractPlaceholderMonster {
     private static final int A_8_HP_MAX = 210;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 324.0F;
+    private static final float HB_H = 341.0F;
     private static final int ATTACK_WEAK_DAMAGE = 15;
     private static final int ATTACK_DAMAGE = 22;
     private int attackWeakDamage;
@@ -32,7 +33,7 @@ public class SmogElemental extends AbstractPlaceholderMonster {
     private int turnNum;
 
     public SmogElemental(float x, float y) {
-        super(NAME, "SmogElemental", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/SmogElemental.png", x, y);
 
         this.type = EnemyType.ELITE;
 

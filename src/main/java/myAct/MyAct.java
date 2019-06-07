@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.monsters.beyond.OrbWalker;
 import com.megacrit.cardcrawl.monsters.exordium.Sentry;
 import myAct.dungeons.Factory;
 import myAct.events.*;
+import myAct.intents.CustomIntent;
+import myAct.intents.SummonMiniBotIntent;
 import myAct.monsters.*;
 import myAct.patches.GetDungeonPatches;
 import myAct.relics.ChargeChargeCharge;
@@ -38,6 +40,25 @@ public class MyAct implements
 
     public static String makeID(String id) {
         return "theFactory:" + id;
+    }
+
+    public static void addIntent(CustomIntent ci) {
+        CustomIntent.intents.put(ci.intent, ci);
+    }
+
+    @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelic(new ChargeChargeCharge(), RelicType.SHARED);
+        BaseMod.addRelic(new Remembrance(), RelicType.SHARED);
+    }
+
+    private String languageSupport() {
+        switch (Settings.language) {
+            case ZHS:
+                return "zhs";
+            default:
+                return "eng";
+        }
     }
 
     @Override
@@ -71,7 +92,7 @@ public class MyAct implements
                         new ExpPersonnel(100.0F, 0.0F, true)
                 }
         ));
-        BaseMod.addMonster(FactoryEncounterIDList.BIG_BOT_ENCOUNTER_ID, () -> new BigBot(0.0F, 100.0F));
+        BaseMod.addMonster(FactoryEncounterIDList.BIG_BOT_ENCOUNTER_ID, () -> new BigBot(10.0F, 0.0F));
 
         // Strong Pool
         BaseMod.addMonster(FactoryEncounterIDList.LARGE_MINIBOT_HORDE_ENCOUNTER_ID, "6 Mini-Bots", () -> new MonsterGroup(
@@ -92,24 +113,24 @@ public class MyAct implements
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_ORB_ENCOUNTER_ID, "Personnel and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new ExpPersonnel(0.0F, 50.0F, false),
-                        new ExpPersonnel(-340.0F, 33.0F, true),
-                        new MiniBotVirus(-133.0F, 250.0F),
-                        new MiniBotRepair(100.0F, 300.0F)
+                        new ExpPersonnel(0.0F, 0.0F, false),
+                        new ExpPersonnel(-340.0F, 0.0F, true),
+                        new MiniBotVirus(-155.0F, 400.0F),
+                        new MiniBotRepair(100.0F, 400.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.SHRAPNEL_THROWER_ENCOUNTER_ID, "Metal Thrower", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new ShrapnelHeap(-225.0F, 0.0F),
+                        new ShrapnelHeap(-300.0F, 0.0F),
                         new ShrapnelTosser(50.F, 0.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.BOT_BUNDLE_ENCOUNTER_ID, "Big Bot Bundle", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new BigBot(-175.0F, 125.0F),
-                        new ToyOrb(100.0F, 260.0F, 0),
+                        new BigBot(-250.0F, 0.0F),
+                        new ToyOrb(-125.0F, 325.0F, 0),
                         new Sentry(0.0F, 0.0F),
-                        new MiniBotRepair(-200.0F, 325.0F)
+                        new MiniBotRepair(-500.0F, 0.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DEFECTIVE_SENTRY_ENCOUNTER_ID, () -> new DefectiveSentry(0.0F, 0.0F));
@@ -122,26 +143,26 @@ public class MyAct implements
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DOUBLE_BIG_BOT_ENCOUNTER_ID, "Sentries and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new Sentry(-450.0F, 20.0F),
-                        new BigBot(-150.0F, 20.0F),
-                        new Sentry(150.0F, 20.0F)
+                        new Sentry(-450.0F, 0.0F),
+                        new BigBot(-150.0F, 0.0F),
+                        new Sentry(150.0F, 0.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DECAYING_SENTINEL_ENCOUNTER_ID, "Decaying Sentinel", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new DecayingSentinel(75.0F, 50.0F),
-                        new SentinelSpawn(-150.0F, 0.0F, 30)
+                        new DecayingSentinel(100.0F, 0.0F),
+                        new SentinelSpawn(-200.0F, 0.0F, 30)
                 }
         ));
 
         // Elite Pool
-        BaseMod.addMonster(FactoryEncounterIDList.MANSERVANTES_ENCOUNTER_ID, () -> new Manservantes(0.0F, 100.0F));
-        BaseMod.addMonster(FactoryEncounterIDList.SMOG_ELEMENTAL_ENCOUNTER_ID, () -> new SmogElemental(0.0F, 100.0F));
-        BaseMod.addMonster(FactoryEncounterIDList.DRINK_BREWER_ENCOUNTER_ID, () -> new DrinkBrewer(0.0F, 100.0F));
+        BaseMod.addMonster(FactoryEncounterIDList.MANSERVANTES_ENCOUNTER_ID, () -> new Manservantes(0.0F, 0.0F));
+        BaseMod.addMonster(FactoryEncounterIDList.SMOG_ELEMENTAL_ENCOUNTER_ID, () -> new SmogElemental(-50.0F, 75.0F));
+        BaseMod.addMonster(FactoryEncounterIDList.DRINK_BREWER_ENCOUNTER_ID, () -> new DrinkBrewer(0.0F, 0.0F));
 
         // Bosses
-        BaseMod.addMonster(FactoryEncounterIDList.GUARDIAN_2_ENCOUNTER_ID, () -> new Guardian2(0.0F, 100.0F));
-        BaseMod.addMonster(FactoryEncounterIDList.EXPERIMENT_01_ENCOUNTER_ID, () -> new Experiment01(0.0F, 100.0F));
+        BaseMod.addMonster(FactoryEncounterIDList.GUARDIAN_2_ENCOUNTER_ID, () -> new Guardian2(0.0F, 0.0F));
+        BaseMod.addMonster(FactoryEncounterIDList.EXPERIMENT_01_ENCOUNTER_ID, () -> new Experiment01(0.0F, 0.0F));
         BaseMod.addMonster(FactoryEncounterIDList.SPIDER_ENCOUNTER_ID, () -> new SPIDER(0.0F, 100.0F));
 
         // Add bosses here
@@ -149,26 +170,14 @@ public class MyAct implements
         BaseMod.addBoss(Factory.ID, SPIDER.ID, "superResources/images/map/placeholder.png", "superResources/images/map/placeholderOutline.png"); // A R T
         BaseMod.addBoss(Factory.ID, Experiment01.ID, "superResources/images/map/placeholder.png", "superResources/images/map/placeholderOutline.png");
 
+        // Add intents
+        MyAct.addIntent(new SummonMiniBotIntent());
+
         // Add dungeon
         GetDungeonPatches.addDungeon(Factory.ID, Factory.builder());
 
         //savable boolean
         BaseMod.addSaveField("wentToTheFactory", this);
-    }
-
-    @Override
-    public void receiveEditRelics() {
-        BaseMod.addRelic(new ChargeChargeCharge(), RelicType.SHARED);
-        BaseMod.addRelic(new Remembrance(), RelicType.SHARED);
-    }
-
-    private String languageSupport() {
-        switch (Settings.language) {
-            case ZHS:
-                return "zhs";
-            default:
-                return "eng";
-        }
     }
 
     private void loadLocStrings(String language) {

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 import myAct.actions.SpawnMiniBotAction;
+import myAct.intents.IntentEnums;
 
 public class MiniBotBuilderBuilder extends AbstractMonster {
     public static final String ID = MyAct.makeID("MiniBotBuilderBuilder");
@@ -31,7 +32,7 @@ public class MiniBotBuilderBuilder extends AbstractMonster {
     private int turnNum = 0;
 
     public MiniBotBuilderBuilder(float x, float y) {
-        super(NAME, "MiniBotBuilderBuilder", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotBuilder.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotBuilder.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A_7_HP_MIN, A_7_HP_MAX);
@@ -66,7 +67,7 @@ public class MiniBotBuilderBuilder extends AbstractMonster {
         } else if (this.turnNum == 1) {
             this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
         } else if (this.turnNum == 2) {
-            this.setMove((byte) 2, Intent.UNKNOWN);
+            this.setMove((byte) 2, IntentEnums.SUMMON_MINI_BOT_INTENT);
         }
         this.turnNum++;
         if (this.turnNum == 3) {

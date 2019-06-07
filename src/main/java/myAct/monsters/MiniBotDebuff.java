@@ -28,10 +28,10 @@ public class MiniBotDebuff extends AbstractMonster {
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 137.0F;
     private static final float HB_H = 155.0F;
-    private int turnNum;
+    private int turnNum = 0;
 
     public MiniBotDebuff(float x, float y) {
-        super(NAME, "MiniBotDebuff", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotDebuff.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotDebuff.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A_7_HP_MIN, A_7_HP_MAX);

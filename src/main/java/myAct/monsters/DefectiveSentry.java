@@ -42,7 +42,7 @@ public class DefectiveSentry extends AbstractMonster {
     private boolean usedMegaDebuff = false;
 
     public DefectiveSentry(float x, float y) {
-        super(NAME, "DefectiveSentry", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/DefectSentry.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/DefectSentry.png", x, y);
 
         this.type = EnemyType.NORMAL;
 

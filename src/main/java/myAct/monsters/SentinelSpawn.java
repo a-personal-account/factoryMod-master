@@ -1,6 +1,7 @@
 package myAct.monsters;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,21 +9,22 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GenericStrengthUpPower;
+import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import myAct.MyAct;
 
-public class SentinelSpawn extends AbstractPlaceholderMonster {
+public class SentinelSpawn extends AbstractMonster {
     public static final String ID = MyAct.makeID("SentinelSpawn");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 194.0F;
+    private static final float HB_H = 137.0F;
     private int turnNum;
 
     public SentinelSpawn(float x, float y, int health) {
-        super(NAME, "SentinelSpawn", health, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, ID, health, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/SentinelSpawn.png", x, y);
 
         this.setHp(health);
         this.damage.add(new DamageInfo(this, 10));
@@ -52,6 +54,7 @@ public class SentinelSpawn extends AbstractPlaceholderMonster {
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDead && !m.isDying) {
                         if (m instanceof DecayingSentinel) {
+                            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
                             AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, this.currentHealth*2));
                         }
                     }

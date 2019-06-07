@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import myAct.MyAct;
 import myAct.actions.SpawnMiniBotAction;
+import myAct.intents.IntentEnums;
 
 public class ExpPersonnel extends AbstractMonster {
     public static final String ID = MyAct.makeID("ExpPersonnel");
@@ -27,16 +28,14 @@ public class ExpPersonnel extends AbstractMonster {
     private static final int A_7_HP_MAX = 115;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 120.0F;
-    private static final float HB_H = 188.0F;
+    private static final float HB_W = 195.0F;
+    private static final float HB_H = 311.0F;
     private static final int REGULAR_OLD_ATTACK_DMG = 8;
     private int regularOldAttackDmg;
-    private int turnNum;
-
-    private boolean right;
+    private int turnNum = 0;
 
     public ExpPersonnel(float x, float y, boolean isRight) {
-        super(NAME, "ExpPersonnel", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/ExpPersonnel.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/ExpPersonnel.png", x, y);
 
         this.type = EnemyType.NORMAL;
 
@@ -45,7 +44,6 @@ public class ExpPersonnel extends AbstractMonster {
         } else {
             this.setHp(HP_MIN, HP_MAX);
         }
-        this.right = isRight;
         if (isRight) {
             this.turnNum++;
         }
@@ -61,10 +59,15 @@ public class ExpPersonnel extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 break;
             case 2:
+                boolean diddit = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 2), 2));
+                        diddit = true;
                     }
+                }
+                if (!diddit) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 2), 2));
                 }
                 break;
             case 3:
@@ -80,17 +83,27 @@ public class ExpPersonnel extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 3, true), 3));
                 break;
             case 7:
+                boolean diddit2 = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new ArtifactPower(m, 1), 1));
+                        diddit2 = true;
                     }
+                }
+                if (!diddit2) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 1), 1));
                 }
                 break;
             case 8:
+                boolean diddit3 = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
                         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, this, 12));
+                        diddit3 = true;
                     }
+                }
+                if (!diddit3) {
+                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 12));
                 }
                 break;
             case 9:
@@ -98,32 +111,53 @@ public class ExpPersonnel extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.1F));
                 break;
             case 10:
+                boolean diddit4 = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new ThornsPower(m, 3), 3));
+                        diddit4 = true;
                     }
+                }
+                if (!diddit4) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ThornsPower(this, 3), 3));
                 }
                 break;
             case 11:
+                boolean diddit5 = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new RegenPower(m, 5), 5));
+                        diddit5 = true;
                     }
+                }
+                if (!diddit5) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RegenPower(this, 5), 5));
                 }
                 break;
             case 12:
+                boolean diddit6 = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new IntangiblePower(m, 1), 1));
+                        diddit6 = true;
                     }
+                }
+                if (!diddit6) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePower(this, 1), 1));
                 }
                 break;
             case 13:
+                boolean diddit7 = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new PlatedArmorPower(m, 4), 4));
+                        diddit7 = true;
                     }
                 }
+                if (!diddit7) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 4), 4));
+                }
+                break;
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -134,7 +168,7 @@ public class ExpPersonnel extends AbstractMonster {
             if (AbstractDungeon.cardRandomRng.random(100) > 34) {
                 this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base, 2, true);
             } else {
-                this.setMove((byte) 5, Intent.UNKNOWN);
+                this.setMove((byte) 5, IntentEnums.SUMMON_MINI_BOT_INTENT);
             }
         } else if (this.turnNum == 1) {
             int whatchaGonnaDo = AbstractDungeon.cardRandomRng.random(11);

@@ -15,12 +15,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
 import myAct.MyAct;
+import myAct.util.TextureLoader;
 
-public class Guardian2 extends AbstractPlaceholderMonster {
+public class Guardian2 extends AbstractMonster {
     public static final String ID = MyAct.makeID("Guardian2");
     public static final int HP = 480;
     public static final int A_2_HP = 500;
@@ -52,7 +54,7 @@ public class Guardian2 extends AbstractPlaceholderMonster {
     private boolean closeUpTriggered = false;
 
     public Guardian2(float x, float y) {
-        super(NAME, "Guardian2", 240, 0.0F, 0.0F, 300.0F, 300.0F, "superResources/images/monsters/bigHex.png", x, y);
+        super(NAME, ID, HP, 0.0F, 0.0F, 581.0F, 481.0F, "superResources/images/monsters/Guardian2_attack.png", x, y);
         this.type = EnemyType.BOSS;
 
         if (AbstractDungeon.ascensionLevel >= 19) {
@@ -91,7 +93,6 @@ public class Guardian2 extends AbstractPlaceholderMonster {
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BarricadePower(this), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ModeShiftPower(this, this.dmgThreshold)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 4), 4));
         AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "Reset Threshold"));
     }
 
@@ -107,6 +108,8 @@ public class Guardian2 extends AbstractPlaceholderMonster {
                 this.useRollAttack();
                 break;
             case 4:
+                this.img = TextureLoader.getTexture("superResources/images/monsters/Guardian2_attack.png");
+                this.updateHitbox(0.0F, 0.0F, 581.0F, 481.0F);
                 this.useTwinSmash();
                 break;
             case 5:
@@ -255,6 +258,8 @@ public class Guardian2 extends AbstractPlaceholderMonster {
                 this.dmgTaken = 0;
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new IntenseZoomEffect(this.hb.cX, this.hb.cY, false), 0.05F, true));
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "Defensive Mode"));
+                this.img = TextureLoader.getTexture("superResources/images/monsters/Guardian2_defend.png");
+                this.updateHitbox(0.0F, 0.0F, 621.0F, 544.0F);
                 this.closeUpTriggered = true;
             }
         }

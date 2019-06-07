@@ -4,9 +4,10 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import myAct.MyAct;
 
-public class ShrapnelHeap extends AbstractPlaceholderMonster {
+public class ShrapnelHeap extends AbstractMonster {
     public static final String ID = MyAct.makeID("ShrapnelHeap");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -17,11 +18,11 @@ public class ShrapnelHeap extends AbstractPlaceholderMonster {
     private static final int A_9_HP_MAX = 300;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 300.0F;
-    private static final float HB_H = 300.0F;
+    private static final float HB_W = 366.0F;
+    private static final float HB_H = 235.0F;
 
     public ShrapnelHeap(float x, float y) {
-        super(NAME, "ShrapnelHeap", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/bigHex.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/ShrapnelHeap.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A_9_HP_MIN, A_9_HP_MAX);

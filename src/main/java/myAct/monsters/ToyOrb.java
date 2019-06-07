@@ -33,7 +33,7 @@ public class ToyOrb extends AbstractMonster {
     private int count;
 
     public ToyOrb(float x, float y, int count) {
-        super(NAME, "ToyOrb", AbstractDungeon.monsterHpRng.random(52, 58), 0.0F, 0.0F, 160.0F, 160.0F, "images/monsters/theCity/automaton/orb.png", x, y);
+        super(NAME, ID, AbstractDungeon.monsterHpRng.random(52, 58), 0.0F, 0.0F, 160.0F, 160.0F, "images/monsters/theCity/automaton/orb.png", x, y);
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(54, 60);
         } else {

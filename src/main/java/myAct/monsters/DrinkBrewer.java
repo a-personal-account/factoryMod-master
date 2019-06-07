@@ -8,10 +8,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import myAct.MyAct;
 import myAct.powers.SickDrinkPower;
 
-public class DrinkBrewer extends AbstractPlaceholderMonster {
+public class DrinkBrewer extends AbstractMonster {
     public static final String ID = MyAct.makeID("DrinkBrewer");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -22,14 +23,14 @@ public class DrinkBrewer extends AbstractPlaceholderMonster {
     private static final int A_8_HP_MAX = 246;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 326.0F;
+    private static final float HB_H = 267.0F;
     private static final int ATTACK_DAMAGE = 20;
     private int attackDamage;
     private int turnNum;
 
     public DrinkBrewer(float x, float y) {
-        super(NAME, "DrinkBrewer", 213, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/DrinkBrewer.png", x, y);
 
         this.type = EnemyType.ELITE;
 

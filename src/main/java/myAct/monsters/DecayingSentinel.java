@@ -4,10 +4,12 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import myAct.MyAct;
 import myAct.actions.SpawnSentinelSpawnAction;
+import myAct.intents.IntentEnums;
 
-public class DecayingSentinel extends AbstractPlaceholderMonster {
+public class DecayingSentinel extends AbstractMonster {
     public static final String ID = MyAct.makeID("DecayingSentinel");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -18,11 +20,11 @@ public class DecayingSentinel extends AbstractPlaceholderMonster {
     private static final int A_8_HP_MAX = 246;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 300.0F;
-    private static final float HB_H = 300.0F;
+    private static final float HB_W = 304.0F;
+    private static final float HB_H = 326.0F;
 
     public DecayingSentinel(float x, float y) {
-        super(NAME, "DecayingSentinel", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/bigHex.png", x, y);
+        super(NAME, "DecayingSentinel", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/DecayingSentinel.png", x, y);
 
         this.type = EnemyType.NORMAL;
 
@@ -45,7 +47,7 @@ public class DecayingSentinel extends AbstractPlaceholderMonster {
     }
 
     protected void getMove(int num) {
-        this.setMove((byte) 1, Intent.UNKNOWN);
+        this.setMove((byte) 1, IntentEnums.SUMMON_MINI_BOT_INTENT);
     }
 
     public void die() {

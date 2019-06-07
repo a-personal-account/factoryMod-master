@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import myAct.MyAct;
 import myAct.actions.SpawnMiniBotAction;
+import myAct.intents.IntentEnums;
 
 public class BigBot extends AbstractMonster {
     public static final String ID = MyAct.makeID("BigBot");
@@ -27,7 +28,7 @@ public class BigBot extends AbstractMonster {
     private int turnNum;
 
     public BigBot(float x, float y) {
-        super(NAME, "BigBot", 213, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/BigBot.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/BigBot.png", x, y);
 
         this.type = EnemyType.NORMAL;
 
@@ -55,7 +56,7 @@ public class BigBot extends AbstractMonster {
     }
 
     protected void getMove(int num) {
-        this.setMove((byte) 1, Intent.UNKNOWN);
+        this.setMove((byte) 1, IntentEnums.SUMMON_MINI_BOT_INTENT);
     }
 
     public void die() {

@@ -17,8 +17,9 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import myAct.MyAct;
 import myAct.actions.SummonBronzeOrbAction;
+import myAct.intents.IntentEnums;
 
-public class Manservantes extends AbstractPlaceholderMonster {
+public class Manservantes extends AbstractMonster {
     public static final String ID = MyAct.makeID("Manservantes");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
@@ -29,14 +30,14 @@ public class Manservantes extends AbstractPlaceholderMonster {
     private static final int A_8_HP_MAX = 210;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
-    private static final int ATTACK_DAMAGE = 6;
+    private static final float HB_W = 309.0F;
+    private static final float HB_H = 446.0F;
+    private static final int ATTACK_DAMAGE = 17;
     private int attackDamage;
     private int turnNum;
 
     public Manservantes(float x, float y) {
-        super(NAME, "Manservantes", 213, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/hex.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/Manservantes.png", x, y);
 
         this.type = EnemyType.ELITE;
 
@@ -86,7 +87,7 @@ public class Manservantes extends AbstractPlaceholderMonster {
 
     protected void getMove(int num) {
         if (turnNum == 0) {
-            this.setMove((byte) 1, Intent.UNKNOWN);
+            this.setMove((byte) 1, IntentEnums.SUMMON_MINI_BOT_INTENT);
         } else if (turnNum == 1) {
             this.setMove((byte) 2, Intent.ATTACK, this.damage.get(0).base);
         } else if (turnNum == 2) {
@@ -94,7 +95,7 @@ public class Manservantes extends AbstractPlaceholderMonster {
         } else if (turnNum == 3) {
             this.setMove((byte) 3, Intent.DEBUFF);
         } else if (turnNum == 4) {
-            this.setMove((byte) 4, Intent.UNKNOWN);
+            this.setMove((byte) 4, IntentEnums.SUMMON_MINI_BOT_INTENT);
         }
         turnNum++;
         if (turnNum == 5) {
@@ -106,9 +107,9 @@ public class Manservantes extends AbstractPlaceholderMonster {
         super.die();
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m.isDead && !m.isDying && m instanceof ToyOrb) {
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
                 AbstractDungeon.actionManager.addToTop(new HideHealthBarAction(m));
                 AbstractDungeon.actionManager.addToTop(new SuicideAction(m));
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
             }
         }
     }

@@ -67,7 +67,7 @@ public class SPIDER extends AbstractMonster {
     private int turnGoing;
 
     public SPIDER(float x, float y) {
-        super(NAME, "SPIDER", 400, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/SPIDER.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/SPIDER.png", x, y);
 
         this.type = EnemyType.BOSS;
 

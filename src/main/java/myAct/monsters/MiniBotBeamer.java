@@ -25,7 +25,7 @@ public class MiniBotBeamer extends AbstractMonster {
     private static final float HB_H = 155.0F;
 
     public MiniBotBeamer(float x, float y) {
-        super(NAME, "MiniBotBeamer", 25, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotBeamer.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "superResources/images/monsters/miniBotBeamer.png", x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A_7_HP_MIN, A_7_HP_MAX);
