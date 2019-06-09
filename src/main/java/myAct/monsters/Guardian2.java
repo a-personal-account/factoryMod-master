@@ -29,9 +29,9 @@ public class Guardian2 extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int DMG_THRESHOLD = 33;
-    private static final int A_2_DMG_THRESHOLD = 44;
-    private static final int A_19_DMG_THRESHOLD = 55;
+    private static final int DMG_THRESHOLD = 35;
+    private static final int A_2_DMG_THRESHOLD = 40;
+    private static final int A_19_DMG_THRESHOLD = 45;
     private static final int FIERCE_BASH_DMG = 500;
     private static final int ROLL_DMG = 10;
     private static final int WHIRLWIND_DMG = 7;
@@ -148,9 +148,9 @@ public class Guardian2 extends AbstractMonster {
 
     private void useCloseUp() {
         if (AbstractDungeon.ascensionLevel >= 19) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SharpHidePower(this, 4)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SharpHidePower(this, 4), 4));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SharpHidePower(this, 3)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SharpHidePower(this, 3), 3));
         }
 
         this.setMove((byte) 3, Intent.ATTACK, this.damage.get(1).base);

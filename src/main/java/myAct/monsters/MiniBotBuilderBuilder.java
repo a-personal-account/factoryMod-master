@@ -28,8 +28,8 @@ public class MiniBotBuilderBuilder extends AbstractMonster {
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 137.0F;
-    private static final float HB_H = 155.0F;
+    private static final float HB_W = 146.0F;
+    private static final float HB_H = 196.0F;
     private static final int ATTACK_DAMAGE = 6;
     private int attackdamage;
     private int turnNum = 0;

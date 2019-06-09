@@ -88,8 +88,8 @@ public class MyAct implements
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_SMALL_ENCOUNTER_ID, "2 Experiment Personnel", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new ExpPersonnel(-200.0F, 0.0F, false),
-                        new ExpPersonnel(100.0F, 0.0F, true)
+                        new ExpPersonnel(-250.0F, 0.0F, false),
+                        new ExpPersonnel(150.0F, 0.0F, true)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.BIG_BOT_ENCOUNTER_ID, () -> new BigBot(10.0F, 0.0F));
@@ -97,11 +97,11 @@ public class MyAct implements
         // Strong Pool
         BaseMod.addMonster(FactoryEncounterIDList.LARGE_MINIBOT_HORDE_ENCOUNTER_ID, "6 Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new MiniBotVirus(-550.0F, 0.0F),
-                        new MiniBotRepair(-400.0F, 250.0F),
-                        new MiniBotBuilderBuilder(-250.0F, 0.0F),
-                        new MiniBotDebuff(-100.0F, 250.0F),
-                        new MiniBotBeamer(50.0F, 0.0F),
+                        new MiniBotVirus(-450.0F, 0.0F),
+                        new MiniBotRepair(-300.0F, 250.0F),
+                        new MiniBotBuilderBuilder(-150.0F, 0.0F),
+                        new MiniBotDebuff(0.0F, 250.0F),
+                        new MiniBotBeamer(150.0F, 0.0F),
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_BOTS_ENCOUNTER_ID, "Personnel and Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{

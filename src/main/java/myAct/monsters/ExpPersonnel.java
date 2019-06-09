@@ -25,8 +25,8 @@ public class ExpPersonnel extends AbstractMonster {
     private static final int A_7_HP_MAX = 115;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 195.0F;
-    private static final float HB_H = 311.0F;
+    private static final float HB_W = 320.0F;
+    private static final float HB_H = 152.0F;
     private static final int REGULAR_OLD_ATTACK_DMG = 8;
     private int regularOldAttackDmg;
     private int turnNum = 0;
