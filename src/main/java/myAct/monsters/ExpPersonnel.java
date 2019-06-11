@@ -19,8 +19,8 @@ public class ExpPersonnel extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 87;
-    private static final int HP_MAX = 99;
+    private static final int HP_MIN = 75;
+    private static final int HP_MAX = 88;
     private static final int A_7_HP_MIN = 100;
     private static final int A_7_HP_MAX = 115;
     private static final float HB_X = 0.0F;
@@ -116,12 +116,12 @@ public class ExpPersonnel extends AbstractMonster {
                 boolean diddit5 = false;
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDying && !m.isDead && m != this && m instanceof ExpPersonnel) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new RegenPower(m, 5), 5));
+                        AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, 10));
                         diddit5 = true;
                     }
                 }
                 if (!diddit5) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RegenPower(this, 5), 5));
+                    AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 10));
                 }
                 break;
             case 12:

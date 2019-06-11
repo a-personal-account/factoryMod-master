@@ -21,8 +21,8 @@ public class MiniBotRepair extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 29;
-    private static final int HP_MAX = 34;
+    private static final int HP_MIN = 28;
+    private static final int HP_MAX = 32;
     private static final int A_7_HP_MIN = 34;
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;

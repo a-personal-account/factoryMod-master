@@ -22,8 +22,8 @@ public class MiniBotBuilderBuilder extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 31;
-    private static final int HP_MAX = 36;
+    private static final int HP_MIN = 30;
+    private static final int HP_MAX = 34;
     private static final int A_7_HP_MIN = 34;
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;

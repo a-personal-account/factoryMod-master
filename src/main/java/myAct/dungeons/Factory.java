@@ -97,7 +97,7 @@ public class Factory extends AbstractDungeon {
             cardUpgradedChance = 0.5F;
         }
 
-    }
+}
 
 
     @Override

@@ -23,16 +23,16 @@ public class DefectiveSentry extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 145;
-    private static final int HP_MAX = 146;
-    private static final int A_8_HP_MIN = 155;
-    private static final int A_8_HP_MAX = 156;
+    private static final int HP_MIN = 130;
+    private static final int HP_MAX = 140;
+    private static final int A_8_HP_MIN = 143;
+    private static final int A_8_HP_MAX = 152;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 240.0F;
     private static final float HB_H = 594.0F;
     private static final int ATTACK_DEBUFF_DAMAGE = 12;
-    private static final int ATTACK_DEFEND_DAMAGE = 20;
+    private static final int ATTACK_DEFEND_DAMAGE = 18;
     private static final int TRIPLE_ATK_DAMAGE = 8;
     private int attackDebuffDamage;
     private int attackDefendDamage;
@@ -64,12 +64,7 @@ public class DefectiveSentry extends AbstractMonster {
         this.damage.add(new DamageInfo(this, attackDebuffDamage));
         this.damage.add(new DamageInfo(this, attackDefendDamage));
         this.damage.add(new DamageInfo(this, tripleAtkDamage));
-        this.damage.add(new DamageInfo(this, 27));
-    }
-
-    @Override
-    public void usePreBattleAction() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 5), 5));
+        this.damage.add(new DamageInfo(this, 23));
     }
 
     @Override
