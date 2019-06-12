@@ -1,0 +1,173 @@
+{
+	"theFactory:BigBot": {
+		"NAME": "Alarm Sentry",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:DecayingSentinel": {
+		"NAME": "Decaying Sentinel",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:DefectiveSentry": {
+		"NAME": "Broken Sentry",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:DrinkBrewer": {
+		"NAME": "Drink Brewer",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:Experiment01": {
+		"NAME": "Experiment 01",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ExpPersonnel": {
+		"NAME": "Experiment Personnel",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:Guardian2": {
+		"NAME": "Guardian 2.0",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:Manservantes": {
+		"NAME": "Manservantes",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotBeamer": {
+		"NAME": "Mini-Bot Beamer",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotBuilderBuilder": {
+		"NAME": "Mini-Bot Summoner",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotDebuff": {
+		"NAME": "Mini-Bot Debuffer",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotRepair": {
+		"NAME": "Mini-Bot Repairer",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotVirus": {
+		"NAME": "Mini-Bot Voider",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:SentinelSpawn": {
+		"NAME": "Sentinel's Spawn",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ShrapnelHeap": {
+		"NAME": "Heap of Shrapnel",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ShrapnelTosser": {
+		"NAME": "Metal Thrower",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:SmogElemental": {
+		"NAME": "Smog Elemental",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:SPIDER": {
+		"NAME": "5P1D3R",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ToyOrb": {
+		"NAME": "Orb",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	}
+}

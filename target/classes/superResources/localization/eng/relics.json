@@ -1,0 +1,16 @@
+{
+  "theFactory:ChargeChargeCharge": {
+    "NAME": "Charge-Up Core",
+    "FLAVOR": "The mechanical monsters are enraged by your boisterous actions.",
+    "DESCRIPTIONS": [
+      "ALL enemies in the next combat start with #b3 #yStrength."
+    ]
+  },
+  "theFactory:Remembrance": {
+    "NAME": "Remembrance",
+    "FLAVOR": "The Merchant has met their end many times against Spire denizens and irate shoppers alike. Fortunately, even revival is possible with enough Gold.",
+    "DESCRIPTIONS": [
+      "The Merchant is #rdead."
+    ]
+  }
+}

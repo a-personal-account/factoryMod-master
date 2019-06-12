@@ -105,10 +105,10 @@ public class MyAct implements
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_BOTS_ENCOUNTER_ID, "Personnel and Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new ExpPersonnel(200.0F, 0.0F, false),
+                        new ExpPersonnel(250.0F, 0.0F, false),
                         new ExpPersonnel(0.0F, 0.0F, true),
-                        new MiniBotBeamer(-200.0F, 0.0F),
-                        new MiniBotDebuff(-400.0F, 0.0F)
+                        new MiniBotBeamer(-250.0F, 0.0F),
+                        new MiniBotDebuff(-500.0F, 0.0F)
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_ORB_ENCOUNTER_ID, "Personnel and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
