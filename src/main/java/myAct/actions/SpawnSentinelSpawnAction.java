@@ -1,10 +1,8 @@
 package myAct.actions;
 
 import basemod.BaseMod;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
@@ -12,13 +10,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GenericStrengthUpPower;
 import myAct.monsters.SentinelSpawn;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 
 public class SpawnSentinelSpawnAction extends AbstractGameAction {
-    private static final float MAX_Y = 400.0F;
-    private static final float MIN_Y = 0.0F;
-    private static final float MIN_X = -500.0F;
-    private static final float MAX_X = 300.0F;
-    private static final float BORDER = 20.0F * Settings.scale;
+    private static final float MAX_Y = AbstractDungeon.floorY + 630.0F * Settings.scale;
+    private static final float MIN_Y = AbstractDungeon.floorY + 70.0F * Settings.scale;
+    private static final float MIN_X = (float) Settings.WIDTH * 0.75F - 600.0F * Settings.scale;
+    private static final float MAX_X = (float) Settings.WIDTH * 0.75F + 400.0F * Settings.scale;
     private int hp;
 
     public SpawnSentinelSpawnAction(int spawnHP) {
@@ -26,56 +26,64 @@ public class SpawnSentinelSpawnAction extends AbstractGameAction {
         this.hp = spawnHP;
     }
 
-    private static boolean overlap(Hitbox a, Hitbox b) {
-        if (a.x > b.x + (b.width + BORDER) || b.x > a.x + (a.width + BORDER))
-            return false;
-
-        return !(a.y > b.y + (b.height + BORDER) || b.y > a.y + (a.height + BORDER));
-    }
-
     @Override
     public void update() {
-        //first, find a good position
-
         AbstractMonster m = new SentinelSpawn(0, 0, this.hp);
 
+        ArrayList<Point> bigOlPointList = new ArrayList<>();
+        for (int x = (int) MIN_X; x <= (int) MAX_X; x += 200 * Settings.scale) {
+            int staggerAmt = 0;
+            for (int y = (int) MIN_Y; y < (int) MAX_Y; y += 350 * Settings.scale) {
+                bigOlPointList.add(new Point(x - staggerAmt, y));
+                staggerAmt += 100 * Settings.scale;
+            }
+        }
+
         Hitbox hb = m.hb;
-        hb.move(m.drawX + MathUtils.random(MIN_X, MAX_X), m.drawY + MathUtils.random(MIN_Y, MAX_Y));
-
-
-        float startX = hb.x;
-        float startY = hb.y;
-        float adjustDistance = 0;
-        float adjustAngle = 0;
-        boolean success = false;
-
-        //check if this is a fine position.
+        boolean success;
+        boolean failsafe = false;
+        int i = 0;
         do {
             success = true;
-            for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                if (!(monster.isDeadOrEscaped())) //we don't care about sparks that died, but other enemies could be issues (like repto daggers which have same pos)
-                {
-                    if (overlap(hb, monster.hb)) {
+            Point pointytime = bigOlPointList.get(AbstractDungeon.cardRandomRng.random(bigOlPointList.size() - 1));
+            hb.move(pointytime.x, pointytime.y);
+            for (AbstractMonster q : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (!q.isDead && !q.isDying && !q.isDeadOrEscaped()) {
+                    if (hb.intersects(q.hb)) {
                         success = false;
-
-                        adjustAngle = (adjustAngle + 0.1f) % (MathUtils.PI2);
-                        adjustDistance += 10.0f;
-
-                        hb.x = startX + MathUtils.cos(adjustAngle) * adjustDistance;
-                        hb.y = startY + MathUtils.sin(adjustAngle) * adjustDistance;
-
-                        break;
                     }
                 }
             }
-        } while (!success);
+            i++;
+            if (i > 100) {
+                failsafe = true;
+            }
+        } while (!success && !failsafe);
+
+        if (failsafe) {
+            ArrayList<Point> bigOlPointList2 = new ArrayList<>();
+            int staggeramt = 0;
+            for (int y = (int) MIN_Y; y < (int) MAX_Y; y += 250 * Settings.scale) {
+                bigOlPointList2.add(new Point((((int) ((float) Settings.WIDTH * 0.75F - 1100.0F * Settings.scale)) - staggeramt), y));
+                staggeramt += 50.0F * Settings.scale;
+            }
+            do {
+                success = true;
+                Point pointytime2 = bigOlPointList2.get(AbstractDungeon.cardRandomRng.random(bigOlPointList2.size() - 1));
+                hb.move(pointytime2.x, pointytime2.y);
+                for (AbstractMonster q : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    if (!q.isDead && !q.isDying && !q.isDeadOrEscaped()) {
+                        if (hb.intersects(q.hb)) {
+                            success = false;
+                        }
+                    }
+                }
+            } while (!success);
+        }
+
 
         m.drawX = hb.x;
         m.drawY = hb.y;
-
-        //m.hb_x = m.hb.cX - (m.drawX + m.animX);
-        //m.hb_y = m.hb.cY - (m.drawY + m.animY);
-        //m.healthHb.move(m.hb.cX, m.hb.cY - m.hb_h / 2.0F - m.healthHb.height / 2.0F);
 
         BaseMod.logger.error("Spawning bot: " + m.drawX + " / " + m.drawY);
 

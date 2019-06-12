@@ -105,16 +105,16 @@ public class MyAct implements
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_BOTS_ENCOUNTER_ID, "Personnel and Mini-Bots", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new ExpPersonnel(250.0F, 0.0F, false),
-                        new ExpPersonnel(0.0F, 0.0F, true),
+                        new MiniBotDebuff(-500.0F, 0.0F),
                         new MiniBotBeamer(-250.0F, 0.0F),
-                        new MiniBotDebuff(-500.0F, 0.0F)
+                        new ExpPersonnel(0.0F, 0.0F, true),
+                        new ExpPersonnel(250.0F, 0.0F, false)
                 }));
         BaseMod.addMonster(FactoryEncounterIDList.PERSONNEL_AND_ORB_ENCOUNTER_ID, "Personnel and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new ExpPersonnel(0.0F, 0.0F, false),
                         new ExpPersonnel(-500.0F, 0.0F, true),
                         new MiniBotVirus(-250.0F, 0.0F),
+                        new ExpPersonnel(0.0F, 0.0F, false),
                         new MiniBotRepair(250.0F, 0.0F)
                 }
         ));
@@ -126,10 +126,10 @@ public class MyAct implements
         ));
         BaseMod.addMonster(FactoryEncounterIDList.BOT_BUNDLE_ENCOUNTER_ID, "Big Bot Bundle", () -> new MonsterGroup(
                 new AbstractMonster[]{
+                        new MiniBotRepair(-500.0F, 0.0F),
                         new BigBot(-250.0F, 0.0F),
                         new ToyOrb(-175.0F, 350.0F, 0),
-                        new Sentry(100.0F, 0.0F),
-                        new MiniBotRepair(-500.0F, 0.0F)
+                        new Sentry(100.0F, 0.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DEFECTIVE_SENTRY_ENCOUNTER_ID, () -> new DefectiveSentry(0.0F, 0.0F));
@@ -149,8 +149,23 @@ public class MyAct implements
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DECAYING_SENTINEL_ENCOUNTER_ID, "Decaying Sentinel", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new DecayingSentinel(100.0F, 0.0F),
-                        new SentinelSpawn(-200.0F, 0.0F, 30)
+                        new SentinelSpawn(-200.0F, 0.0F, 30),
+                        new DecayingSentinel(100.0F, 0.0F)
+                }
+        ));
+
+        BaseMod.addMonster("AABB", "AABB", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F),
+                        new BigBot(-1000.0F, 1000.0F)
                 }
         ));
 

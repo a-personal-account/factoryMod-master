@@ -28,8 +28,8 @@ public class MiniBotDebuff extends AbstractMonster {
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 146.0F;
-    private static final float HB_H = 196.0F;
+    private static final float HB_W = 126.0F;
+    private static final float HB_H = 172.0F;
     private int turnNum = 0;
 
     public MiniBotDebuff(float x, float y) {
@@ -58,7 +58,7 @@ public class MiniBotDebuff extends AbstractMonster {
                 break;
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new ColoredLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, Color.GREEN.cpy()), 0.3F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));

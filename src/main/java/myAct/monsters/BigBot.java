@@ -23,8 +23,8 @@ public class BigBot extends AbstractMonster {
     private static final int A_8_HP_MAX = 100;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 172.0F;
-    private static final float HB_H = 251.0F;
+    private static final float HB_W = 131.0F;
+    private static final float HB_H = 226.0F;
     private int turnNum;
 
     public BigBot(float x, float y) {

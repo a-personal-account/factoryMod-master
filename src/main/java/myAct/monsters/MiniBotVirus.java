@@ -2,7 +2,6 @@ package myAct.monsters;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.AnimateHopAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -29,8 +28,8 @@ public class MiniBotVirus extends AbstractMonster {
     private static final int A_7_HP_MAX = 45;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 146.0F;
-    private static final float HB_H = 196.0F;
+    private static final float HB_W = 126.0F;
+    private static final float HB_H = 172.0F;
     private int turnNum = 1;
 
     public MiniBotVirus(float x, float y) {

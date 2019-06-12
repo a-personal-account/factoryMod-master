@@ -53,7 +53,7 @@ public class ToyOrb extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.NONE));
                 break;
             case 2:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.getMonsters().getRandomMonster(), this, 10));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.getMonsters().getRandomMonster(true), this, 10));
                 break;
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new ApplyStasisAction(this));
