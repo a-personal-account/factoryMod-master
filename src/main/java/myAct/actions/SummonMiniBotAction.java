@@ -92,11 +92,20 @@ public class SummonMiniBotAction extends AbstractGameAction {
         BaseMod.logger.error("Spawning bot: " + m.drawX + " / " + m.drawY);
 
         ArrayList<AbstractMonster> bundlea = new ArrayList<>();
-        bundlea.add(new MiniBotBeamer(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
-        bundlea.add(new MiniBotDebuff(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
-        bundlea.add(new MiniBotRepair(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
-        bundlea.add(new MiniBotVirus(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
-        bundlea.add(new MiniBotBuilderBuilder(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+        if (failsafe) {
+            bundlea.add(new MiniBotBeamer(-1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotDebuff(-1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotRepair(-1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotVirus(-1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotBuilderBuilder(-1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+        } else {
+            bundlea.add(new MiniBotBeamer(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotDebuff(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotRepair(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotVirus(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+            bundlea.add(new MiniBotBuilderBuilder(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
+        }
+
 
         AbstractMonster q = bundlea.get(AbstractDungeon.cardRandomRng.random(bundlea.size() - 1));
         AbstractDungeon.actionManager.addToTop(new SpawnMonsterAutoPositionAction(q, false, m.drawX));
