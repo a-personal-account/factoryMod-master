@@ -7,7 +7,7 @@
     <name>The Factory</name>
     <groupId>factoryMod</groupId>
     <artifactId>TheFactory</artifactId>
-    <version>0.8</version>
+    <version>0.9</version>
 
     <properties>
         <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>

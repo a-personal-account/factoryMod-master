@@ -35,6 +35,7 @@ myAct/powers/SickDrinkPower.class
 myAct/actions/SpawnMonsterAutoPositionAction.class
 myAct/monsters/Guardian2.class
 myAct/patches/GetDungeonPatches$AbstractDungeonBuilder.class
+myAct/powers/PissOffPower.class
 myAct/scenes/FactoryScene.class
 myAct/monsters/DecayingSentinel.class
 myAct/monsters/ToyOrb.class

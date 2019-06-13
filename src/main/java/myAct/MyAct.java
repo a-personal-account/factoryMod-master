@@ -154,21 +154,6 @@ public class MyAct implements
                 }
         ));
 
-        BaseMod.addMonster("AABB", "AABB", () -> new MonsterGroup(
-                new AbstractMonster[]{
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F),
-                        new BigBot(-1000.0F, 1000.0F)
-                }
-        ));
-
         // Elite Pool
         BaseMod.addMonster(FactoryEncounterIDList.MANSERVANTES_ENCOUNTER_ID, () -> new Manservantes(0.0F, 0.0F));
         BaseMod.addMonster(FactoryEncounterIDList.SMOG_ELEMENTAL_ENCOUNTER_ID, () -> new SmogElemental(-50.0F, 75.0F));

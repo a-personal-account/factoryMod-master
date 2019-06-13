@@ -42,7 +42,6 @@ public class BigBot extends AbstractMonster {
     @Override
     public void usePreBattleAction() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 2), 2));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5), 5));
     }
 
     public void takeTurn() {

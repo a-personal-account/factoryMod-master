@@ -19,8 +19,8 @@ public class ExpPersonnel extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 75;
-    private static final int HP_MAX = 88;
+    private static final int HP_MIN = 86;
+    private static final int HP_MAX = 92;
     private static final int A_7_HP_MIN = 100;
     private static final int A_7_HP_MAX = 115;
     private static final float HB_X = 0.0F;
@@ -155,13 +155,9 @@ public class ExpPersonnel extends AbstractMonster {
 
     protected void getMove(int num) {
         if (this.turnNum == 0) {
-            if (AbstractDungeon.cardRandomRng.random(100) > 34) {
                 this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base, 2, true);
-            } else {
-                this.setMove((byte) 5, IntentEnums.SUMMON_MINI_BOT_INTENT);
-            }
         } else if (this.turnNum == 1) {
-            int whatchaGonnaDo = AbstractDungeon.cardRandomRng.random(10);
+            int whatchaGonnaDo = AbstractDungeon.cardRandomRng.random(11);
             if (whatchaGonnaDo == 0) {
                 this.setMove((byte) 2, Intent.BUFF);
             } else if (whatchaGonnaDo == 1) {
@@ -184,6 +180,8 @@ public class ExpPersonnel extends AbstractMonster {
                 this.setMove((byte) 12, Intent.BUFF);
             } else if (whatchaGonnaDo == 10) {
                 this.setMove((byte) 13, Intent.BUFF);
+            } else if (whatchaGonnaDo == 11) {
+                this.setMove((byte) 5, IntentEnums.SUMMON_MINI_BOT_INTENT);
             }
         }
         this.turnNum++;

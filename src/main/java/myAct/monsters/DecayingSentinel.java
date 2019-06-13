@@ -14,8 +14,8 @@ public class DecayingSentinel extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 225;
-    private static final int HP_MAX = 225;
+    private static final int HP_MIN = 255;
+    private static final int HP_MAX = 255;
     private static final int A_8_HP_MIN = 246;
     private static final int A_8_HP_MAX = 246;
     private static final float HB_X = 0.0F;
@@ -33,7 +33,12 @@ public class DecayingSentinel extends AbstractMonster {
         } else {
             this.setHp(HP_MIN, HP_MAX);
         }
+    }
 
+    @Override
+    public void usePreBattleAction() {
+        this.currentHealth = this.maxHealth - 30;
+        this.healthBarUpdatedEvent();
     }
 
     public void takeTurn() {

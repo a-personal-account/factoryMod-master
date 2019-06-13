@@ -2,30 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b937e48e-b0b3-4bc1-a066-3dc02e05ef30" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/myAct/powers/PissOffPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/AbstractRoomUpdateIncrementElitesPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/BlightsPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/ContinueOntoHeartPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/DeadShopkeepPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/FactoryMainMusic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/FactoryTempMusic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/GetDungeonPatches.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/GoToNextDungeonPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/PlaceholderMonsterTintPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/ProceedButtonToActFourPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/RoomRewardsBossPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/SetAreaNamePatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/act4Patches/VictoryOrDeathScreenPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myAct/MyAct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/MyAct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/actions/SpawnSentinelSpawnAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/actions/SpawnSentinelSpawnAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/actions/SummonMiniBotAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/actions/SummonMiniBotAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/BigBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/BigBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotBeamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotBeamer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotBuilderBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotBuilderBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotDebuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotDebuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotRepair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotRepair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotVirus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotVirus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/ToyOrb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/ToyOrb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/superResources/images/monsters/BigBot.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/superResources/images/monsters/BigBot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/DecayingSentinel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/DecayingSentinel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/DefectiveSentry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/DefectiveSentry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/monsters/ExpPersonnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/monsters/ExpPersonnel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/relics/ChargeChargeCharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/relics/ChargeChargeCharge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myAct/relics/Remembrance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myAct/relics/Remembrance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/events.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/events.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/powers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/powers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/relics.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/relics.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TheFactory.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TheFactory.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/antrun/build-main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/myAct/MyAct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/MyAct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/myAct/actions/SummonMiniBotAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/actions/SummonMiniBotAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/BigBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/BigBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotBeamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotBeamer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotBuilderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotBuilderBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotDebuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotDebuff.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotRepair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotVirus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/MiniBotVirus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/ToyOrb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/ToyOrb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/superResources/images/monsters/BigBot.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/superResources/images/monsters/BigBot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/DecayingSentinel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/DecayingSentinel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/DefectiveSentry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/DefectiveSentry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/myAct/monsters/ExpPersonnel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/monsters/ExpPersonnel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/myAct/relics/ChargeChargeCharge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/relics/ChargeChargeCharge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/myAct/relics/Remembrance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/myAct/relics/Remembrance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/superResources/localization/eng/events.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/superResources/localization/eng/events.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/superResources/localization/eng/powers.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/superResources/localization/eng/powers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/superResources/localization/eng/relics.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/superResources/localization/eng/relics.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,29 +57,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SummonMiniBotAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1234">
-              <caret line="15" selection-start-line="15" selection-end-line="87" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SpawnSentinelSpawnAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1674">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -72,11 +68,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>floorNum</find>
-      <find>floorNum ==</find>
-      <find>spireHeart</find>
-      <find>goToVictoryRoomOrTheDoor</find>
-      <find>instanceof</find>
       <find>boss</find>
       <find>reward</find>
       <find>rewards</find>
@@ -102,6 +93,11 @@
       <find>scale</find>
       <find>ABCD</find>
       <find>floorY</find>
+      <find>SpawnSentinelSpawnAction</find>
+      <find>CoughCoughPower</find>
+      <find>update</find>
+      <find>endofturn</find>
+      <find>start</find>
     </findStrings>
     <replaceStrings>
       <replace>ProceedButtonToActFourPatch</replace>
@@ -109,6 +105,8 @@
       <replace>SpawnSentinelSpawnAction</replace>
       <replace>isThereScrap</replace>
       <replace>SpawnMonsterAutoPositionAction</replace>
+      <replace>SpawnBronzeOrbActoin</replace>
+      <replace>PissOffPower</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main</dir>
@@ -120,11 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/myAct/patches/ProceedButtonToActFourPatch.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/patches/GoToNextDungeonPatch.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/patches/AbstractRoomUpdateIncrementElitesPatch.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/patches/VictoryOrDeathScreenPatch.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/FactoryEncounterIDList.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/events/WindingCorridors.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/events/ForkInTheRoad.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/actions/MoveCreatureNoHBAction.java" />
@@ -139,7 +132,6 @@
         <option value="$PROJECT_DIR$/src/main/java/myAct/patches/AddCustomTips.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/patches/addCustomIntentVFX.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/patches/AddCustomIntents.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/DecayingSentinel.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/DrinkBrewer.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/SentinelSpawn.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/SmogElemental.java" />
@@ -153,17 +145,10 @@
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/Experiment01.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/actions/SpawnMiniBotAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/actions/SpawnMonsterAutoPositionAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/actions/SpawnBronzeOrbAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/SPIDER.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/Guardian2.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/dungeons/Factory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/ExpPersonnel.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/events.json" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/DefectiveSentry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/BigBot.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/ToyOrb.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myAct/MyAct.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotBeamer.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotVirus.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotRepair.java" />
@@ -171,6 +156,19 @@
         <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/MiniBotBuilderBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/actions/SummonMiniBotAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/myAct/actions/SpawnSentinelSpawnAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/actions/SpawnBronzeOrbAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/MyAct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/ExpPersonnel.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/powers.json" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/BigBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/DecayingSentinel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/powers/PissOffPower.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/monsters/DefectiveSentry.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/events.json" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/relics/Remembrance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myAct/relics/ChargeChargeCharge.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/superResources/localization/eng/relics.json" />
       </list>
     </option>
   </component>
@@ -240,24 +238,6 @@
               <item name="factoryMod-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myAct" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheFactory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="factoryMod-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="myAct" type="462c0819:PsiDirectoryNode" />
-              <item name="monsters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheFactory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="factoryMod-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -267,24 +247,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="superResources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheFactory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="factoryMod-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="superResources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheFactory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="factoryMod-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="superResources" type="462c0819:PsiDirectoryNode" />
-              <item name="eng" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TheFactory" type="b2602c69:ProjectViewProjectNode" />
@@ -343,9 +305,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="23" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26434678" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27045178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -354,7 +315,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -366,118 +327,13 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.11721612" />
+      <window_info active="true" anchor="right" id="Maven" order="4" visible="true" weight="0.11721612" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/SmogElemental.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/DecayingSentinel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/ShrapnelTosser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="29" column="100" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/Manservantes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/ShrapnelHeap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/superResources/localization/eng/monsters.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1145">
-          <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/intents/IntentEnums.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/intents/SummonMiniBotIntent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/ColoredLaserEffect.java" />
-    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/vfx/combat/SmallLaserEffect.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="27" column="11" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/monsters/city/BronzeOrb.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="61" selection-start-line="61" selection-end-line="61" selection-end-column="181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/vfx/ColoredLaserEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/SentinelSpawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/Experiment01.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-837">
-          <caret line="131" column="17" lean-forward="true" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/events/beyond/SpireHeart.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1344">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/monsters/ending/CorruptHeart.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -510,13 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SpawnBronzeOrbAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/potions/ExplosivePotion.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -538,37 +387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2916">
           <caret line="152" column="117" selection-start-line="152" selection-start-column="117" selection-end-line="152" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ModTheSpire.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/ExpPersonnel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="123" column="81" selection-start-line="123" selection-start-column="81" selection-end-line="123" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/superResources/localization/eng/events.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/DefectiveSentry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -611,13 +429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/ToyOrb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="55" column="129" selection-start-line="55" selection-start-column="129" selection-end-line="55" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/neow/NeowEvent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-256">
@@ -632,13 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/BigBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/monsters/AbstractMonster.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-555">
@@ -650,16 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="3193" column="14" selection-start-line="3193" selection-start-column="8" selection-end-line="3193" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/MyAct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="167" column="53" selection-start-line="167" selection-start-column="53" selection-end-line="167" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -723,20 +517,197 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SummonMiniBotAction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SpawnSentinelSpawnAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1234">
-          <caret line="15" selection-start-line="15" selection-end-line="87" />
+        <state relative-caret-position="18">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SpawnSentinelSpawnAction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/MoveCreatureAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1674">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="-1329">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/ToyOrb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="55" column="129" selection-start-line="55" selection-start-column="129" selection-end-line="55" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SpawnBronzeOrbAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1611">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/SentinelSpawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/actions/SummonMiniBotAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/ExpPersonnel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3933">
+          <caret line="183" column="75" selection-start-line="183" selection-start-column="75" selection-end-line="183" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/MyAct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="154" column="11" lean-forward="true" selection-start-line="154" selection-start-column="11" selection-end-line="154" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/powers/CoughCoughPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="18" column="13" selection-end-line="63" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/powers/ShiftingPower.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/monsters/beyond/WrithingMass.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/powers/ReactivePower.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/powers/AbstractPower.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="233" column="23" selection-start-line="233" selection-start-column="18" selection-end-line="233" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/DrinkBrewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-401">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/BigBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar!/com/megacrit/cardcrawl/relics/PreservedInsect.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="35" selection-start-line="35" selection-end-line="36" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/DecayingSentinel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/superResources/localization/eng/powers.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/monsters/DefectiveSentry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="74" column="104" selection-start-line="74" selection-start-column="104" selection-end-line="74" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/powers/PissOffPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1315">
+          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+          <folding>
+            <element signature="e#2433#2434#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/superResources/localization/eng/events.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="93" column="48" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/relics/Remembrance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="12" column="117" selection-start-line="12" selection-start-column="117" selection-end-line="12" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/myAct/relics/ChargeChargeCharge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="37" column="86" selection-start-line="37" selection-start-column="86" selection-end-line="37" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ModTheSpire.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/superResources/localization/eng/relics.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="95" lean-forward="true" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="95" />
         </state>
       </provider>
     </entry>

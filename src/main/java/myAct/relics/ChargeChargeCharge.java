@@ -13,8 +13,8 @@ public class ChargeChargeCharge extends CustomRelic {
 
     public static final String ID = MyAct.makeID("ChargeChargeCharge");
 
-    private static final Texture IMG = TextureLoader.getTexture("superResources/images/relics/placeholder_relic.png");
-    private static final Texture OUTLINE = TextureLoader.getTexture("superResources/images/relics/outline/placeholder_relic.png");
+    private static final Texture IMG = TextureLoader.getTexture("superResources/images/relics/angerman.png");
+    private static final Texture OUTLINE = TextureLoader.getTexture("superResources/images/relics/outline/angerman.png");
 
     public ChargeChargeCharge() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
@@ -35,7 +35,7 @@ public class ChargeChargeCharge extends CustomRelic {
     public void setCounter(int counter) {
         this.counter = counter;
         if (counter == -2) {
-            this.img = TextureLoader.getTexture("superResources/images/relics/placeholder_relic_used.png");
+            this.img = TextureLoader.getTexture("superResources/images/relics/angerman_used.png");
             this.usedUp();
             this.counter = -2;
         }

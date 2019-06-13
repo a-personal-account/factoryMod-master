@@ -1,9 +1,11 @@
 package myAct.monsters;
 
-import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.curses.Clumsy;
@@ -12,21 +14,23 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import myAct.MyAct;
+import myAct.actions.SummonMiniBotAction;
+import myAct.intents.IntentEnums;
+import myAct.powers.PissOffPower;
 
 public class DefectiveSentry extends AbstractMonster {
     public static final String ID = MyAct.makeID("DefectiveSentry");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 130;
-    private static final int HP_MAX = 140;
-    private static final int A_8_HP_MIN = 143;
-    private static final int A_8_HP_MAX = 152;
+    private static final int HP_MIN = 152;
+    private static final int HP_MAX = 164;
+    private static final int A_8_HP_MIN = 170;
+    private static final int A_8_HP_MAX = 180;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 240.0F;
@@ -37,7 +41,6 @@ public class DefectiveSentry extends AbstractMonster {
     private int attackDebuffDamage;
     private int attackDefendDamage;
     private int tripleAtkDamage;
-    private int timertime = 0;
     private boolean usedMegaDebuff = false;
 
     public DefectiveSentry(float x, float y) {
@@ -68,15 +71,8 @@ public class DefectiveSentry extends AbstractMonster {
     }
 
     @Override
-    public void update() {
-        super.update();
-        if (!AbstractDungeon.actionManager.turnHasEnded) {
-            timertime += 60 * Gdx.graphics.getDeltaTime();
-            if (timertime >= 30) {
-                AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
-                timertime = 0;
-            }
-        }
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PissOffPower(this), 1));
     }
 
     public void takeTurn() {
@@ -106,6 +102,9 @@ public class DefectiveSentry extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(new Clumsy()));
                 usedMegaDebuff = true;
                 break;
+            case 7:
+                AbstractDungeon.actionManager.addToBottom(new SummonMiniBotAction());
+                break;
         }
 
     }
@@ -113,9 +112,9 @@ public class DefectiveSentry extends AbstractMonster {
     protected void getMove(int num) {
         int whatwedoin;
         if (!usedMegaDebuff) {
-            whatwedoin = AbstractDungeon.cardRandomRng.random(5);
+            whatwedoin = AbstractDungeon.cardRandomRng.random(6);
         } else {
-            whatwedoin = AbstractDungeon.cardRandomRng.random(4);
+            whatwedoin = AbstractDungeon.cardRandomRng.random(5);
         }
         if (whatwedoin == 0) {
             this.setMove((byte) 1, Intent.ATTACK, this.damage.get(3).base);
@@ -128,6 +127,8 @@ public class DefectiveSentry extends AbstractMonster {
         } else if (whatwedoin == 4) {
             this.setMove((byte) 5, Intent.DEBUFF);
         } else if (whatwedoin == 5) {
+            this.setMove((byte) 7, IntentEnums.SUMMON_MINI_BOT_INTENT);
+        } else if (whatwedoin == 6) {
             this.setMove((byte) 6, Intent.STRONG_DEBUFF);
         }
 

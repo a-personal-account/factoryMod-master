@@ -87,15 +87,15 @@
     ]
   },
   "theFactory:TroubledShopkeep": {
-    "NAME": "Shopkeep In Trouble",
+    "NAME": "Merchant In Trouble",
     "DESCRIPTIONS": [
       "In the next cube of hivelike robotic activity, you see a familiar blue figure accosted by several bulky robots. NL NL \"Hey! You! Beloved customer! HELP ME!!!\" they yell as they begin to approach. You have a feeling they will not make it out of this one OK without your help.",
-      "You rush in and dispatch the bots, getting a few wounds in return. The merchant is extremely grateful. \"Thank you! Thank you so much, I was terrified! Here, have this.\" They bestow upon you a useful trinket and proceed upon their own way. NL NL You continue...",
-      "You turn around and run away. NL NL The merchant's screams echo in your ears as you flee..."
+      "You rush in and dispatch the bots, getting a few wounds in return. The Merchant is extremely grateful. \"Thank you! Thank you so much, I was terrified! Here, have this.\" They bestow upon you a useful trinket and proceed upon their own way. NL NL You continue...",
+      "You turn around and run away. NL NL The Merchant's screams echo in your ears as you flee..."
     ],
     "OPTIONS": [
       "[Intervene] #rLose #r16 #rHP. #gObtain #ga #gShop #grelic.",
-      "[Run] #rThe #rShopkeeper #rdies.",
+      "[Run] #rThe #rMerchant #rdies.",
       "[Leave]"
     ]
   }

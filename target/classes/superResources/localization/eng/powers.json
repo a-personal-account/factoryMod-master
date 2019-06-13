@@ -25,5 +25,11 @@
       "At the start of your turn, #yExhaust #b",
       " cards from your hand at random."
     ]
+  },
+  "theFactory:PissOffPower": {
+    "NAME": "Defective",
+    "DESCRIPTIONS": [
+      "Changes intent every half a second."
+    ]
   }
 }
