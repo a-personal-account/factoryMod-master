@@ -19,10 +19,10 @@ public class ExpPersonnel extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 86;
-    private static final int HP_MAX = 92;
-    private static final int A_7_HP_MIN = 100;
-    private static final int A_7_HP_MAX = 115;
+    private static final int HP_MIN = 80;
+    private static final int HP_MAX = 87;
+    private static final int A_7_HP_MIN = 90;
+    private static final int A_7_HP_MAX = 97;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 320.0F;
@@ -49,6 +49,11 @@ public class ExpPersonnel extends AbstractMonster {
         this.damage.add(new DamageInfo(this, regularOldAttackDmg));
         this.damage.add(new DamageInfo(this, 20));
         this.damage.add(new DamageInfo(this, 10));
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, 2), 2));
     }
 
     public void takeTurn() {

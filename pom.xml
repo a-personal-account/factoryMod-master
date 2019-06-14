@@ -7,7 +7,7 @@
     <name>The Factory</name>
     <groupId>factoryMod</groupId>
     <artifactId>TheFactory</artifactId>
-    <version>0.9</version>
+    <version>1.1</version>
 
     <properties>
         <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
@@ -36,13 +36,6 @@
             <version>5.8.0</version>
             <scope>system</scope>
             <systemPath>/Users/vexon/Library/Application Support/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.evacipated.cardcrawl.mod</groupId>
-            <artifactId>stslib</artifactId>
-            <version>1.11.0</version>
-            <scope>system</scope>
-            <systemPath>/Users/vexon/Library/Application Support/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>

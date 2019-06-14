@@ -14,10 +14,10 @@ public class DecayingSentinel extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 255;
-    private static final int HP_MAX = 255;
-    private static final int A_8_HP_MIN = 246;
-    private static final int A_8_HP_MAX = 246;
+    private static final int HP_MIN = 258;
+    private static final int HP_MAX = 258;
+    private static final int A_8_HP_MIN = 269;
+    private static final int A_8_HP_MAX = 269;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 304.0F;

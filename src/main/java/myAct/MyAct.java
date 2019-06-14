@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.beyond.OrbWalker;
+import com.megacrit.cardcrawl.monsters.city.SphericGuardian;
+import com.megacrit.cardcrawl.monsters.exordium.Lagavulin;
 import com.megacrit.cardcrawl.monsters.exordium.Sentry;
 import myAct.dungeons.Factory;
 import myAct.events.*;
@@ -127,7 +129,7 @@ public class MyAct implements
         BaseMod.addMonster(FactoryEncounterIDList.BOT_BUNDLE_ENCOUNTER_ID, "Big Bot Bundle", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new MiniBotRepair(-500.0F, 0.0F),
-                        new BigBot(-250.0F, 0.0F),
+                        new SphericGuardian(-250.0F, 0.0F),
                         new ToyOrb(-175.0F, 350.0F, 0),
                         new Sentry(100.0F, 0.0F)
                 }
@@ -143,8 +145,8 @@ public class MyAct implements
         BaseMod.addMonster(FactoryEncounterIDList.DOUBLE_BIG_BOT_ENCOUNTER_ID, "Sentries and Big Bot", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new Sentry(-450.0F, 0.0F),
-                        new BigBot(-150.0F, 0.0F),
-                        new Sentry(150.0F, 0.0F)
+                        new Sentry(-150.0F, 0.0F),
+                        new BigBot(150.0F, 0.0F)
                 }
         ));
         BaseMod.addMonster(FactoryEncounterIDList.DECAYING_SENTINEL_ENCOUNTER_ID, "Decaying Sentinel", () -> new MonsterGroup(
@@ -153,6 +155,13 @@ public class MyAct implements
                         new DecayingSentinel(100.0F, 0.0F)
                 }
         ));
+         /* BaseMod.addMonster(FactoryEncounterIDList.SENTRY_GUARDS_ENCOUNTER_ID, "Sentry and Guards", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new MiniBotDebuff(-450.0F, 0.0F),
+                        new BigBot(-150.0F, 0.0F),
+                        new MiniBotRepair(150.0F, 0.0F)
+                }
+        )); */
 
         // Elite Pool
         BaseMod.addMonster(FactoryEncounterIDList.MANSERVANTES_ENCOUNTER_ID, () -> new Manservantes(0.0F, 0.0F));

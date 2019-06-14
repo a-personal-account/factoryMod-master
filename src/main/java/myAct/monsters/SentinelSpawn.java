@@ -54,8 +54,8 @@ public class SentinelSpawn extends AbstractMonster {
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDead && !m.isDying) {
                         if (m instanceof DecayingSentinel) {
-                            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
-                            AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, this.currentHealth*2));
+                            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(this.hb.cX, this.hb.cY), 0.1F));
+                            AbstractDungeon.actionManager.addToBottom(new HealAction(m, this, this.currentHealth));
                         }
                     }
                 }

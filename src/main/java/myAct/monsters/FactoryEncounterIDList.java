@@ -15,6 +15,7 @@ public class FactoryEncounterIDList {
     public static final String DEFECTIVE_SENTRY_ENCOUNTER_ID = DefectiveSentry.ID;
     public static final String BORING_BASEGAME_ENCOUNTER_ID = MyAct.makeID("Orbs_and_Orb_Walker");
     public static final String DOUBLE_BIG_BOT_ENCOUNTER_ID = MyAct.makeID("Sentries_and_Big_Bot");
+    public static final String SENTRY_GUARDS_ENCOUNTER_ID = MyAct.makeID("Sentry and Guards");
     public static final String DECAYING_SENTINEL_ENCOUNTER_ID = DecayingSentinel.ID;
     public static final String MANSERVANTES_ENCOUNTER_ID = Manservantes.ID;
     public static final String SMOG_ELEMENTAL_ENCOUNTER_ID = SmogElemental.ID;

@@ -130,6 +130,7 @@ public class Factory extends AbstractDungeon {
         monsters.add(new MonsterInfo(FactoryEncounterIDList.BORING_BASEGAME_ENCOUNTER_ID, 1.0F));
         monsters.add(new MonsterInfo(FactoryEncounterIDList.DOUBLE_BIG_BOT_ENCOUNTER_ID, 1.0F));
         monsters.add(new MonsterInfo(FactoryEncounterIDList.DECAYING_SENTINEL_ENCOUNTER_ID, 1.0F));
+       //  monsters.add(new MonsterInfo(FactoryEncounterIDList.SENTRY_GUARDS_ENCOUNTER_ID, 1.0F));
 
         MonsterInfo.normalizeWeights(monsters);
         populateFirstStrongEnemy(monsters, generateExclusions());

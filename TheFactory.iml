@@ -38,15 +38,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Maven: com.evacipated.cardcrawl.mod:stslib:1.11.0">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="Maven: com.evacipated.cardcrawl.mod:jungle:1.11.0">
         <CLASSES>
           <root url="jar://$USER_HOME$/Library/Application Support/Steam/steamapps/workshop/content/646570/1632754046/TheJungle.jar!/" />

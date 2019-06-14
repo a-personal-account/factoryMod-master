@@ -106,7 +106,6 @@ public class SummonMiniBotAction extends AbstractGameAction {
             bundlea.add(new MiniBotBuilderBuilder(1000.0F, AbstractDungeon.cardRandomRng.random(-1000, 1000)));
         }
 
-
         AbstractMonster q = bundlea.get(AbstractDungeon.cardRandomRng.random(bundlea.size() - 1));
         AbstractDungeon.actionManager.addToTop(new SpawnMonsterAutoPositionAction(q, false, m.drawX));
         if (failsafe) {
