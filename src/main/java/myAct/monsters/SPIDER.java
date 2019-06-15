@@ -122,7 +122,9 @@ public class SPIDER extends AbstractMonster {
     }
 
     public void usePreBattleAction() {
-        AbstractDungeon.getCurrRoom().rewardAllowed = false;
+        if (!Settings.isEndless) {
+            AbstractDungeon.getCurrRoom().rewardAllowed = false;
+        }
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");

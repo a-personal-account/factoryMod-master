@@ -1,0 +1,35 @@
+{
+  "theFactory:CoughCoughPower": {
+    "NAME": "咳咳",
+    "DESCRIPTIONS": [
+      "每打出一张牌，受到 #b",
+      " 点伤害。"
+    ]
+  },
+  "theFactory:EndOfTurnDamagePower": {
+    "NAME": "即将到来的攻击",
+    "DESCRIPTIONS": [
+      "本回合结束时，受到 #b",
+      " 点伤害"
+    ]
+  },
+  "theFactory:GuardingPower": {
+    "NAME": "受保护",
+    "DESCRIPTIONS": [
+      "该敌人失去的生命由破片堆代为承受。"
+    ]
+  },
+  "theFactory:SickDrinkPower": {
+    "NAME": "喝醉",
+    "DESCRIPTIONS": [
+      "回合开始时， #y消耗 你手牌中的 #b",
+      " 张随机牌。"
+    ]
+  },
+  "theFactory:PissOffPower": {
+    "NAME": "Defective",
+    "DESCRIPTIONS": [
+      "Changes intent every half a second."
+    ]
+  }
+}

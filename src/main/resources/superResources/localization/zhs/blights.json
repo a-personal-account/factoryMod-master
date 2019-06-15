@@ -1,0 +1,20 @@
+{
+  "theFactory:EndlessReinforcements": {
+    "NAME": "无尽增援",
+    "DESCRIPTION": [
+      "每 #b4 个回合， #b1 个微型机器人会在回合开始时加入战斗。  NL #p这里总有无穷无尽的部队喷涌而出。 "
+    ]
+  },
+  "theFactory:OppressiveHeat": {
+    "NAME": "沉重热量",
+    "DESCRIPTION": [
+      "每 #b2 场战斗，在战斗开始时失去 #b1 个随机的普通、罕见或稀有遗物。 NL #p这里灼热的空气熔掉了你那些小饰品。 "
+    ]
+  },
+  "theFactory:PainfulGloom": {
+    "NAME": "致命黑暗",
+    "DESCRIPTION": [
+      "每 #b3 个回合结束时，添加 #b1 张随机的诅咒牌到你的抽牌堆里。 NL #p这片黑暗的环境激发出的只有恐惧。 "
+    ]
+  }
+}

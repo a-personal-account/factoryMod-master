@@ -48,7 +48,7 @@ public class PissOffPower extends AbstractPower implements CloneablePowerInterfa
         super.update(slot);
         if (turn) {
             timertime += 60 * Gdx.graphics.getDeltaTime();
-            if (timertime >= 30) {
+            if (timertime >= 60) {
                 AbstractDungeon.actionManager.addToTop(new RollMoveAction((AbstractMonster) this.owner));
                 timertime = 0;
             }

@@ -8,12 +8,12 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.beyond.OrbWalker;
 import com.megacrit.cardcrawl.monsters.city.SphericGuardian;
-import com.megacrit.cardcrawl.monsters.exordium.Lagavulin;
 import com.megacrit.cardcrawl.monsters.exordium.Sentry;
 import myAct.dungeons.Factory;
 import myAct.events.*;
@@ -155,13 +155,13 @@ public class MyAct implements
                         new DecayingSentinel(100.0F, 0.0F)
                 }
         ));
-         /* BaseMod.addMonster(FactoryEncounterIDList.SENTRY_GUARDS_ENCOUNTER_ID, "Sentry and Guards", () -> new MonsterGroup(
+        BaseMod.addMonster(FactoryEncounterIDList.SENTRY_GUARDS_ENCOUNTER_ID, "Sentry and Guards", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new MiniBotDebuff(-450.0F, 0.0F),
                         new BigBot(-150.0F, 0.0F),
                         new MiniBotRepair(150.0F, 0.0F)
                 }
-        )); */
+        ));
 
         // Elite Pool
         BaseMod.addMonster(FactoryEncounterIDList.MANSERVANTES_ENCOUNTER_ID, () -> new Manservantes(0.0F, 0.0F));
@@ -183,6 +183,7 @@ public class MyAct implements
 
         // Add dungeon
         GetDungeonPatches.addDungeon(Factory.ID, Factory.builder());
+        GetDungeonPatches.addNextDungeon(Factory.ID, Exordium.ID);
 
         //savable boolean
         BaseMod.addSaveField("wentToTheFactory", this);
@@ -190,13 +191,24 @@ public class MyAct implements
 
     private void loadLocStrings(String language) {
 
-        BaseMod.loadCustomStringsFile(EventStrings.class, "superResources/localization/eng/events.json");
-        BaseMod.loadCustomStringsFile(UIStrings.class, "superResources/localization/eng/ui.json");
-        BaseMod.loadCustomStringsFile(MonsterStrings.class, "superResources/localization/eng/monsters.json");
-        BaseMod.loadCustomStringsFile(PowerStrings.class, "superResources/localization/eng/powers.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class, "superResources/localization/eng/relics.json");
-        BaseMod.loadCustomStringsFile(ScoreBonusStrings.class, "superResources/localization/eng/score_bonuses.json");
-        BaseMod.loadCustomStringsFile(BlightStrings.class, "superResources/localization/eng/blights.json");
+        if (language.equals("zhs")) {
+            BaseMod.loadCustomStringsFile(EventStrings.class, "superResources/localization/zhs/events.json");
+            BaseMod.loadCustomStringsFile(UIStrings.class, "superResources/localization/zhs/ui.json");
+            BaseMod.loadCustomStringsFile(MonsterStrings.class, "superResources/localization/zhs/monsters.json");
+            BaseMod.loadCustomStringsFile(PowerStrings.class, "superResources/localization/zhs/powers.json");
+            BaseMod.loadCustomStringsFile(RelicStrings.class, "superResources/localization/zhs/relics.json");
+            BaseMod.loadCustomStringsFile(ScoreBonusStrings.class, "superResources/localization/zhs/score_bonuses.json");
+            BaseMod.loadCustomStringsFile(BlightStrings.class, "superResources/localization/zhs/blights.json");
+        } else {
+            BaseMod.loadCustomStringsFile(EventStrings.class, "superResources/localization/eng/events.json");
+            BaseMod.loadCustomStringsFile(UIStrings.class, "superResources/localization/eng/ui.json");
+            BaseMod.loadCustomStringsFile(MonsterStrings.class, "superResources/localization/eng/monsters.json");
+            BaseMod.loadCustomStringsFile(PowerStrings.class, "superResources/localization/eng/powers.json");
+            BaseMod.loadCustomStringsFile(RelicStrings.class, "superResources/localization/eng/relics.json");
+            BaseMod.loadCustomStringsFile(ScoreBonusStrings.class, "superResources/localization/eng/score_bonuses.json");
+            BaseMod.loadCustomStringsFile(BlightStrings.class, "superResources/localization/eng/blights.json");
+        }
+
     }
 
     @Override

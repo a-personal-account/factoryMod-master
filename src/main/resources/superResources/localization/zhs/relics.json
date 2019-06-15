@@ -1,0 +1,16 @@
+{
+  "theFactory:ChargeChargeCharge": {
+    "NAME": "充能核心",
+    "FLAVOR": "机械怪物们被你狂暴的行为激怒了。",
+    "DESCRIPTIONS": [
+      "下一场战斗中的所有敌人初始拥有 #b3 点 #y力量 。"
+    ]
+  },
+  "theFactory:Remembrance": {
+    "NAME": "纪念",
+    "FLAVOR": "商人曾经多次在高塔住民或是愤怒顾客的袭击下丧命。还好，只要有足够的金币，连复活都是可能的。",
+    "DESCRIPTIONS": [
+      "商人已经 #r死去 。"
+    ]
+  }
+}

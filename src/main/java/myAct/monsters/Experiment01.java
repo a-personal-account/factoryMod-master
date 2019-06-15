@@ -7,9 +7,11 @@ import com.megacrit.cardcrawl.actions.animations.AnimateHopAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,17 +31,16 @@ public class Experiment01 extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 666;
-    private static final int HP_MAX = 666;
-    private static final int A_9_HP_MIN = 678;
-    private static final int A_9_HP_MAX = 678;
+    private static final int HP_MIN = 520;
+    private static final int HP_MAX = 520;
+    private static final int A_9_HP_MIN = 600;
+    private static final int A_9_HP_MAX = 600;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 630.0F;
     private static final float HB_H = 618.0F;
     private static final int ATTACK_LIFESTEAL_DAMAGE = 20;
     private static final int ATTACK_DEBUFF_DAMAGE = 15;
-    private boolean firstTurn = true;
     private int attackLifestealDamage;
     private int attackDebuffDamage;
 
@@ -67,7 +68,10 @@ public class Experiment01 extends AbstractMonster {
     }
 
     public void usePreBattleAction() {
-        AbstractDungeon.getCurrRoom().rewardAllowed = false;
+        if (!Settings.isEndless)
+        {
+            AbstractDungeon.getCurrRoom().rewardAllowed = false;
+        }
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");
@@ -181,7 +185,7 @@ public class Experiment01 extends AbstractMonster {
                     } else if (letsSee == 3) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 2, true), 2));
                     } else if (letsSee == 4) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new PoisonPower(AbstractDungeon.player, this, 2), 2));
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
                     }
                 }
                 break;

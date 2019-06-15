@@ -1,0 +1,173 @@
+{
+	"theFactory:BigBot": {
+		"NAME": "警戒哨卫",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:DecayingSentinel": {
+		"NAME": "腐坏岗哨",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:DefectiveSentry": {
+		"NAME": "破损哨卫",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:DrinkBrewer": {
+		"NAME": "饮料酿造机",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:Experiment01": {
+		"NAME": "实验品01",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ExpPersonnel": {
+		"NAME": "实验专员",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:Guardian2": {
+		"NAME": "守护者2.0",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:Manservantes": {
+		"NAME": "仆役机器人",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotBeamer": {
+		"NAME": "微型激光机器人",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotBuilderBuilder": {
+		"NAME": "微型召唤机器人",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotDebuff": {
+		"NAME": "微型增益机器人",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotRepair": {
+		"NAME": "微型修补机器人",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:MiniBotVirus": {
+		"NAME": "微型虚空机器人",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:SentinelSpawn": {
+		"NAME": "岗哨衍体",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ShrapnelHeap": {
+		"NAME": "破片堆",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ShrapnelTosser": {
+		"NAME": "金属投掷者",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:SmogElemental": {
+		"NAME": "雾霾元素",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:SPIDER": {
+		"NAME": "机械蜘蛛",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	},
+	"theFactory:ToyOrb": {
+		"NAME": "圆球",
+		"MOVES": [
+			"MOVE1???"
+		],
+		"DIALOG": [
+			"DIALOG1???"
+		]
+	}
+}

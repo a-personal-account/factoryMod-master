@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GetDungeonPatches {
-    // Note: this should at some point be moved to BaseMod
+
     public static HashMap<String, AbstractDungeonBuilder> customDungeons = new HashMap<>();
     public static HashMap<String, String> nextDungeons = new HashMap<>();
 

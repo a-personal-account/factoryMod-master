@@ -29,7 +29,7 @@
   "theFactory:PissOffPower": {
     "NAME": "Defective",
     "DESCRIPTIONS": [
-      "Changes intent every half a second."
+      "Changes intent every second."
     ]
   }
 }

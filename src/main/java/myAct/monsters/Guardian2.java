@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -87,7 +88,10 @@ public class Guardian2 extends AbstractMonster {
     }
 
     public void usePreBattleAction() {
-        AbstractDungeon.getCurrRoom().rewardAllowed = false;
+        if (!Settings.isEndless)
+        {
+            AbstractDungeon.getCurrRoom().rewardAllowed = false;
+        }
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_FACTORY");
