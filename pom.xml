@@ -37,13 +37,6 @@
             <scope>system</scope>
             <systemPath>/Users/vexon/Library/Application Support/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>com.evacipated.cardcrawl.mod</groupId>
-            <artifactId>jungle</artifactId>
-            <version>1.11.0</version>
-            <scope>system</scope>
-            <systemPath>/Users/vexon/Library/Application Support/Steam/steamapps/workshop/content/646570/1632754046/TheJungle.jar</systemPath>
-        </dependency>
     </dependencies>
 
     <build>
