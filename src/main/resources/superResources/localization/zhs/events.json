@@ -1,16 +1,4 @@
 {
-  "theFactory:ForkInTheRoad": {
-    "NAME": "分岔路口",
-    "DESCRIPTIONS": [
-      "你向着高处继续攀登。 NL 这时，道路出现了一个分岔。 NL 左侧岔路通向一片旋涡状的废土，其中充满了超现实的形状。 NL 而在右侧岔路，一幢巨大的金属建筑物若隐若现。 NL 你思考着该走哪边。   "
-    ],
-    "OPTIONS": [
-      ".",
-      "[向左走] 前往 ",
-      "[向右走] 前往 ",
-      "[随便往哪边走] 随机选择前往的地点。"
-    ]
-  },
   "theFactory:Flying": {
     "NAME": "飞翔",
     "DESCRIPTIONS": [

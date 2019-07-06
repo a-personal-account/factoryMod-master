@@ -5,7 +5,7 @@
     "Vex'd",
     "Visager"
   ],
-  "description": "I made an act.",
+  "description": "Modified for use with actlikeit.",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
